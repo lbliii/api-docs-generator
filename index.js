@@ -2,7 +2,7 @@ const fs = require('fs')
 const path = require('path') 
 const jsyaml = require('js-yaml')
 
-// read the spec.yml file and convert it to spec.json 
+// Read the spec.yml file and convert it to spec.json 
 const spec = fs.readFileSync(path.join(__dirname, '/spec.yml'), 'utf8')
 const specJson = jsyaml.load(spec)
 fs.writeFileSync(path.join(__dirname, '/spec.json'), JSON.stringify(specJson, null, 2))
@@ -11,6 +11,7 @@ fs.writeFileSync(path.join(__dirname, '/spec.json'), JSON.stringify(specJson, nu
 const htmlContent = []
 const paths = specJson.paths
 let paths_details = ''
+// TODO: Move the CSS Styling to a separate file. 
 let css_html = `<style>
 .paths_container {
     display: flex;
@@ -29,8 +30,8 @@ let css_html = `<style>
     border: 1px solid #ccc;
     border-radius: 5px;
     padding: 10px;
-    margin: 10px;
-    width: 100%;
+    margin: 0 auto;
+    width: 90%;
     text-align: center;
 }
 .get {
@@ -38,8 +39,8 @@ let css_html = `<style>
     border: 1px solid #ccc;
     border-radius: 5px;
     padding: 10px;
-    margin: 10px;
-    width: 100%;
+    margin: 0 auto;
+    width: 90%;
     text-align: center;
 }
 .post {
@@ -47,8 +48,35 @@ let css_html = `<style>
     border: 1px solid #ccc;
     border-radius: 5px;
     padding: 10px;
-    margin: 10px;
-    width: 100%;
+    margin: 0 auto;
+    width: 90%;
+    text-align: center;
+}
+.put {
+    background-color: ;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 0 auto;
+    width: 90%;
+    text-align: center;
+}
+.delete {
+    background-color: ;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 0 auto;
+    width: 90%;
+    text-align: center;
+}
+.parameter {
+    background-color: ;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 0 auto;
+    width: 80%;
     text-align: center;
 }
 
@@ -63,7 +91,7 @@ let css_html = `<style>
 }
 </style>`
 
-// Create a div for each path with the path name and the path details as sub-divs 
+// Create section in the DOM for each path and include its methods.
 
 const generateAllPathDetails = (paths) => {
     const details = Object.keys(paths).map(path => {
@@ -89,7 +117,7 @@ const generatePathMethods = (path) => {
     let post_html = ''
     let put_html = ''
     let delete_html = ''
-
+    // Generate the html for each method and store it in the variables above.
     if (get_raw){
         const parameters = generateMethodParameters(get_raw)
 
@@ -150,16 +178,18 @@ const generateMethodParameters = (method) => {
     return method_parameters.join(', ')
 }
 
-// add paths_html to the htmlContent array
-
-generateAllPathDetails(paths)
-
-htmlContent.push(css_html)
-htmlContent.push(paths_details)
-
+// Create the index.html file for the documentation.
 const updateHtmlFile = () => {
     fs.writeFileSync(path.join(__dirname, '/index.html'), htmlContent.join(''))
     }
 
-    updateHtmlFile()
+
+// Execute the function that generates the html for each path.
+
+generateAllPathDetails(paths)
+
+    htmlContent.push(css_html)
+    htmlContent.push(paths_details)
+
+updateHtmlFile()
 
