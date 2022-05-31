@@ -85,6 +85,19 @@ let css_html = `<style>
     width: 90%;
     text-align: center;
 }
+.response {
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 2px;
+    margin: 0 auto;
+    width: 90%;
+    text-align: center;
+}
+
+.response-properties {
+    list-style-type: none;
+    padding: 0;
+}
 
 .set {
     background-color: ;
@@ -208,11 +221,11 @@ const generateMethodParameters = (method) => {
             if (parameter.$ref){
                 const ref_name = parameter.$ref.split('/')[3]
                 const ref_link = specJson.components.parameters[ref_name]
-                console.log(ref_link)
                 method_parameters.push(
                     `<div class="parameter">
                     <h5>${ref_link.name}</h5>
                     <p><strong>Type:</strong> ${ref_link.in}</p>
+                    <p><strong>Format:</strong> ${ref_link.schema.type}</p>
                     <p><strong>Description:</strong> ${ref_link.description}</p>
                     <p><strong>Required:</strong> ${ref_link.required}</p>
                     </div>`
@@ -233,21 +246,66 @@ const generateMethodParameters = (method) => {
 
 const generateResponses = (method) => {
     let responses_content = ''
+    let schemas_content = ''
     if (method.responses){
         const response = method.responses 
-        const response_keys = Object.keys(response)
+        const response_keys = Object.keys(method.responses)
         response_keys.forEach(key => {
-            console.log(key)
+            const response_value = response[key].content
+            if (response_value){
+                const schema = response_value["application/json"].schema 
+            // if schema exists, get the schema properties
+                if (schema.$ref){ 
+                    const schema_name = schema.$ref.split('/')[3]
+                    const schema_link = specJson.components.schemas[schema_name]
+                    const schema_properties = schema_link.properties 
+                    if (schema_properties){
+                        // get the properties of the schema
+                        const schema_properties_keys = Object.keys(schema_properties)
+                        console.log(schema_properties_keys)
+
+                    let schema_content = `<div class="response">
+                        <h4>${key}</h4>
+                        <ul class="response-properties">
+                        ${schema_properties_keys.map(property => {
+                            return `<li>${property}: ${schema_properties[property].type}</li>`
+                        }).join('')}
+                        </ul>
+                        </div>`
+
+                    console.log(schema_content)
+                    schemas_content = schema_content
+                        
+                    }
+        
+                } else if (schema.allOf)  {
+                    console.log(schema.allOf)
+                } else if (schema.oneOf) {
+                    console.log(schema.oneOf)
+                } else if (schema.anyOf) {
+                    console.log('anyOf: ' + schema.anyOf)
+                } else if (schema.items) {
+    
+                    console.log('aaa: ' + schema.items)
+                } else if (schema.type) {
+                    console.log('bbb: ' +  schema.type  )
+                } else if (schema.properties) {
+                    console.log('ccc: ' + schema.properties)
+                }
+
+            }  
+    
             responses_content += `<div class="response">
             <h5>${key}</h5>
             <p><strong>Description:</strong> ${response[key].description}</p>
-            <p><strong>Schema:</strong> ${key}</p>
+            <p><strong>Schema:</strong> ${schemas_content} </p>
             </div>`
         })
     }
 
     return responses_content
 }
+
 
 
 // Create the index.html file for the documentation.
