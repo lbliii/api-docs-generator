@@ -1,0 +1,303 @@
+<style>
+.paths_container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: left;
+}
+.path {
+    background-color: #000;
+    color: #fff;
+    padding: 10px;
+    width: 90%;
+    text-align: left;
+}
+.path-details {
+    background-color: #f5f5f5;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px;
+    width: 100%;
+    text-align: center;
+}
+.get {
+    background-color: ;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px;
+    width: 100%;
+    text-align: center;
+}
+.post {
+    background-color: ;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px;
+    width: 100%;
+    text-align: center;
+}
+
+.set {
+    background-color: ;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px;
+    width: 100%;
+    text-align: center;
+}
+</style><section class="set"> 
+      <h2>pet</h2>
+      <div class="path">/pet</div>
+       <div class="post">
+        <h3>POST</h3>
+        <p>Add a new pet to the store</p>
+        <p>pet</p>
+        <p>addPet</p>
+        <p></p>
+        </div> <div class="put">
+        <h3>PUT</h3>
+        <p>Update an existing pet by Id</p>
+        <p>pet</p>
+        <p>updatePet</p>
+        <p></p>
+        </div> 
+      </section><section class="set"> 
+      <h2>pet</h2>
+      <div class="path">/pet/findByStatus</div>
+      <div class="get">
+        <h3>GET</h3>
+        <p>Multiple status values can be provided with comma separated strings</p>
+        <p>pet</p>
+        <p>findPetsByStatus</p>
+        <p><div class="parameter"> PARAMS:
+            <p>status</p>
+            <p>query</p>
+            <p>Status values that need to be considered for filter</p>
+            <p>false</p>
+            </div></p>
+        </div>   
+      </section><section class="set"> 
+      <h2>pet</h2>
+      <div class="path">/pet/findByTags</div>
+      <div class="get">
+        <h3>GET</h3>
+        <p>Multiple tags can be provided with comma separated strings. Use tag1, tag2, tag3 for testing.</p>
+        <p>pet</p>
+        <p>findPetsByTags</p>
+        <p><div class="parameter"> PARAMS:
+            <p>tags</p>
+            <p>query</p>
+            <p>Tags to filter by</p>
+            <p>false</p>
+            </div></p>
+        </div>   
+      </section><section class="set"> 
+      <h2>pet</h2>
+      <div class="path">/pet/{petId}</div>
+      <div class="get">
+        <h3>GET</h3>
+        <p>Returns a single pet</p>
+        <p>pet</p>
+        <p>getPetById</p>
+        <p><div class="parameter"> PARAMS:
+            <p>petId</p>
+            <p>path</p>
+            <p>ID of pet to return</p>
+            <p>true</p>
+            </div></p>
+        </div> <div class="post">
+        <h3>POST</h3>
+        <p></p>
+        <p>pet</p>
+        <p>updatePetWithForm</p>
+        <p><div class="parameter"> PARAMS:
+            <p>petId</p>
+            <p>path</p>
+            <p>ID of pet that needs to be updated</p>
+            <p>true</p>
+            </div>, <div class="parameter"> PARAMS:
+            <p>name</p>
+            <p>query</p>
+            <p>Name of pet that needs to be updated</p>
+            <p>undefined</p>
+            </div>, <div class="parameter"> PARAMS:
+            <p>status</p>
+            <p>query</p>
+            <p>Status of pet that needs to be updated</p>
+            <p>undefined</p>
+            </div></p>
+        </div>  <div class="delete">
+        <h3>DELETE</h3>
+        <p></p>
+        <p>pet</p>
+        <p>deletePet</p>
+        <p><div class="parameter"> PARAMS:
+            <p>api_key</p>
+            <p>header</p>
+            <p></p>
+            <p>false</p>
+            </div>, <div class="parameter"> PARAMS:
+            <p>petId</p>
+            <p>path</p>
+            <p>Pet id to delete</p>
+            <p>true</p>
+            </div></p>
+        </div>
+      </section><section class="set"> 
+      <h2>pet</h2>
+      <div class="path">/pet/{petId}/uploadImage</div>
+       <div class="post">
+        <h3>POST</h3>
+        <p></p>
+        <p>pet</p>
+        <p>uploadFile</p>
+        <p><div class="parameter"> PARAMS:
+            <p>petId</p>
+            <p>path</p>
+            <p>ID of pet to update</p>
+            <p>true</p>
+            </div>, <div class="parameter"> PARAMS:
+            <p>additionalMetadata</p>
+            <p>query</p>
+            <p>Additional Metadata</p>
+            <p>false</p>
+            </div></p>
+        </div>  
+      </section><section class="set"> 
+      <h2>store</h2>
+      <div class="path">/store/inventory</div>
+      <div class="get">
+        <h3>GET</h3>
+        <p>Returns a map of status codes to quantities</p>
+        <p>store</p>
+        <p>getInventory</p>
+        <p></p>
+        </div>   
+      </section><section class="set"> 
+      <h2>store</h2>
+      <div class="path">/store/order</div>
+       <div class="post">
+        <h3>POST</h3>
+        <p>Place a new order in the store</p>
+        <p>store</p>
+        <p>placeOrder</p>
+        <p></p>
+        </div>  
+      </section><section class="set"> 
+      <h2>store</h2>
+      <div class="path">/store/order/{orderId}</div>
+      <div class="get">
+        <h3>GET</h3>
+        <p>For valid response try integer IDs with value <= 5 or > 10. Other values will generate exceptions.</p>
+        <p>store</p>
+        <p>getOrderById</p>
+        <p><div class="parameter"> PARAMS:
+            <p>orderId</p>
+            <p>path</p>
+            <p>ID of order that needs to be fetched</p>
+            <p>true</p>
+            </div></p>
+        </div>   <div class="delete">
+        <h3>DELETE</h3>
+        <p>For valid response try integer IDs with value < 1000. Anything above 1000 or nonintegers will generate API errors</p>
+        <p>store</p>
+        <p>deleteOrder</p>
+        <p><div class="parameter"> PARAMS:
+            <p>orderId</p>
+            <p>path</p>
+            <p>ID of the order that needs to be deleted</p>
+            <p>true</p>
+            </div></p>
+        </div>
+      </section><section class="set"> 
+      <h2>user</h2>
+      <div class="path">/user</div>
+       <div class="post">
+        <h3>POST</h3>
+        <p>This can only be done by the logged in user.</p>
+        <p>user</p>
+        <p>createUser</p>
+        <p></p>
+        </div>  
+      </section><section class="set"> 
+      <h2>user</h2>
+      <div class="path">/user/createWithList</div>
+       <div class="post">
+        <h3>POST</h3>
+        <p>Creates list of users with given input array</p>
+        <p>user</p>
+        <p>createUsersWithListInput</p>
+        <p></p>
+        </div>  
+      </section><section class="set"> 
+      <h2>user</h2>
+      <div class="path">/user/login</div>
+      <div class="get">
+        <h3>GET</h3>
+        <p></p>
+        <p>user</p>
+        <p>loginUser</p>
+        <p><div class="parameter"> PARAMS:
+            <p>username</p>
+            <p>query</p>
+            <p>The user name for login</p>
+            <p>false</p>
+            </div>, <div class="parameter"> PARAMS:
+            <p>password</p>
+            <p>query</p>
+            <p>The password for login in clear text</p>
+            <p>false</p>
+            </div></p>
+        </div>   
+      </section><section class="set"> 
+      <h2>user</h2>
+      <div class="path">/user/logout</div>
+      <div class="get">
+        <h3>GET</h3>
+        <p></p>
+        <p>user</p>
+        <p>logoutUser</p>
+        <p></p>
+        </div>   
+      </section><section class="set"> 
+      <h2>user</h2>
+      <div class="path">/user/{username}</div>
+      <div class="get">
+        <h3>GET</h3>
+        <p></p>
+        <p>user</p>
+        <p>getUserByName</p>
+        <p><div class="parameter"> PARAMS:
+            <p>username</p>
+            <p>path</p>
+            <p>The name that needs to be fetched. Use user1 for testing. </p>
+            <p>true</p>
+            </div></p>
+        </div>  <div class="put">
+        <h3>PUT</h3>
+        <p>This can only be done by the logged in user.</p>
+        <p>user</p>
+        <p>updateUser</p>
+        <p><div class="parameter"> PARAMS:
+            <p>username</p>
+            <p>path</p>
+            <p>name that need to be deleted</p>
+            <p>true</p>
+            </div></p>
+        </div> <div class="delete">
+        <h3>DELETE</h3>
+        <p>This can only be done by the logged in user.</p>
+        <p>user</p>
+        <p>deleteUser</p>
+        <p><div class="parameter"> PARAMS:
+            <p>username</p>
+            <p>path</p>
+            <p>The name that needs to be deleted</p>
+            <p>true</p>
+            </div></p>
+        </div>
+      </section>
