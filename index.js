@@ -17,6 +17,7 @@ let css_html = `<style>
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    width: 100%;
 }
 .path {
     background-color: #000;
@@ -24,6 +25,7 @@ let css_html = `<style>
     padding: 10px;
     width: 90%;
     text-align: left;
+    margin: 0 auto;
 }
 .path-details {
     background-color: #f5f5f5;
@@ -35,8 +37,8 @@ let css_html = `<style>
     text-align: center;
 }
 .get {
-    background-color: ;
-    border: 1px solid #ccc;
+    
+    background-image: linear-gradient(to bottom, #00FF00, #fff);
     border-radius: 5px;
     padding: 10px;
     margin: 0 auto;
@@ -44,8 +46,7 @@ let css_html = `<style>
     text-align: center;
 }
 .post {
-    background-color: ;
-    border: 1px solid #ccc;
+    background-image: linear-gradient(to bottom, #0000FF, #fff);
     border-radius: 5px;
     padding: 10px;
     margin: 0 auto;
@@ -53,8 +54,7 @@ let css_html = `<style>
     text-align: center;
 }
 .put {
-    background-color: ;
-    border: 1px solid #ccc;
+    background-image: linear-gradient(to bottom, #FFFF00, #fff);
     border-radius: 5px;
     padding: 10px;
     margin: 0 auto;
@@ -62,8 +62,7 @@ let css_html = `<style>
     text-align: center;
 }
 .delete {
-    background-color: ;
-    border: 1px solid #ccc;
+    background-image: linear-gradient(to bottom, #FF0000, #fff);
     border-radius: 5px;
     padding: 10px;
     margin: 0 auto;
@@ -71,12 +70,19 @@ let css_html = `<style>
     text-align: center;
 }
 .parameter {
-    background-color: ;
-    border: 1px solid #ccc;
+    background-color: #fff;
     border-radius: 5px;
-    padding: 10px;
+    padding: 2px;
     margin: 0 auto;
     width: 80%;
+    text-align: center;
+}
+.parameters {
+    background-color: #efefef;
+    border-radius: 5px;
+    padding: 2px;
+    margin: 0 auto;
+    width: 90%;
     text-align: center;
 }
 
@@ -85,8 +91,8 @@ let css_html = `<style>
     border: 1px solid #ccc;
     border-radius: 5px;
     padding: 10px;
-    margin: 10px;
-    width: 100%;
+    margin: 0 auto;
+    width: 90%;
     text-align: center;
 }
 </style>`
@@ -126,7 +132,10 @@ const generatePathMethods = (path) => {
         <p>${get_raw.description}</p>
         <p>${get_raw.tags}</p>
         <p>${get_raw.operationId}</p>
-        <p>${parameters}</p>
+            <div class="parameters">
+            <h4>Parameters</h4>
+            ${parameters}
+            </div>
         </div>`
     }
     if (post_raw){
@@ -136,7 +145,10 @@ const generatePathMethods = (path) => {
         <p>${post_raw.description}</p>
         <p>${post_raw.tags}</p>
         <p>${post_raw.operationId}</p>
-        <p>${parameters}</p>
+        <div class="parameters">
+            <h4>Parameters</h4>
+            ${parameters}
+            </div>
         </div>`
     }
     if (put_raw){
@@ -146,7 +158,10 @@ const generatePathMethods = (path) => {
         <p>${put_raw.description}</p>
         <p>${put_raw.tags}</p>
         <p>${put_raw.operationId}</p>
-        <p>${parameters}</p>
+        <div class="parameters">
+            <h4>Parameters</h4>
+            ${parameters}
+            </div>
         </div>`
     }
     if (delete_raw){
@@ -156,7 +171,10 @@ const generatePathMethods = (path) => {
         <p>${delete_raw.description}</p>
         <p>${delete_raw.tags}</p>
         <p>${delete_raw.operationId}</p>
-        <p>${parameters}</p>
+        <div class="parameters">
+            <h4>Parameters</h4>
+            ${parameters}
+            </div>
         </div>`
     }
     let all_methods = `${get_html} ${post_html} ${put_html} ${delete_html}`
@@ -167,15 +185,15 @@ const generateMethodParameters = (method) => {
     const method_parameters = []
     if (method.parameters){
         method.parameters.forEach(parameter => {
-            method_parameters.push(`<div class="parameter"> PARAMS:
-            <p>${parameter.name}</p>
-            <p>${parameter.in}</p>
-            <p>${parameter.description}</p>
-            <p>${parameter.required}</p>
+            method_parameters.push(`<div class="parameter">
+            <h5>${parameter.name}</h5>
+            <p><strong>Type:</strong> ${parameter.in}</p>
+            <p><strong>Description:</strong> ${parameter.description}</p>
+            <p><strong>Required:</strong> ${parameter.required}</p>
             </div>`)
         })
     }
-    return method_parameters.join(', ')
+    return method_parameters.join('')
 }
 
 // Create the index.html file for the documentation.
