@@ -1,4 +1,16 @@
 <style>
+body {
+    font-family: sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #000;
+    background-color: #f7f7f7;
+}
+p {
+    margin: 0 0 10px;
+    padding: 0px;
+}
+
 .paths_container {
     display: flex;
     flex-wrap: wrap;
@@ -79,6 +91,10 @@
     width: 90%;
     text-align: center;
 }
+.response-bodies {
+    background-color: #fff;
+    line-height: .9;
+}
 
 .response-properties {
     list-style-type: none;
@@ -94,20 +110,32 @@
     width: 90%;
     text-align: center;
 }
+
+
+
+button {
+    background-color: #000;
+    color: #fff;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+
 </style><section class="set"> 
-      <h2>v1</h2>
+      
       <div class="path">/v1/account/addresses</div>
        <div class="post">
         <h3>POST</h3>
-        <p>Add an address to a shopper's account address book.</p>
-        <p>Account</p>
-        <p>AddAddress</p>
+        <p>Add an address to a shopper's account address book.<br>
+        <button class="tag">Account</button><br>
+        AddAddress<br>
+        </p>
         <div class="parameters">
             <h4>Parameters</h4>
             
         </div>
-        <div class="request_body">
-            <h4>Request Body</h4>
+        <div class="response-bodies">
+            <h4>Responses</h4>
             <div class="response">
             <h5>200</h5>
             <p><strong>Description:</strong> Address Added Successfully</p>
@@ -116,61 +144,62 @@
         </div>
         </div>  
       </section><section class="set"> 
-      <h2>v1</h2>
+      
       <div class="path">/v1/account</div>
       <div class="get">
         <h3>GET</h3>
-        <p>Fetch a shopper's account details to pre-fill checkout fields. This request must come from your backend. For PCI compliance, only limited information is returned for each credit card available in the shopper’s wallet.</p>
-        <p>Account</p>
-        <p>GetAccountDetails</p>
+        <p>Fetch a shopper's account details to pre-fill checkout fields. This request must come from your backend. For PCI compliance, only limited information is returned for each credit card available in the shopper’s wallet. <br> 
+        <button class="tag">Account</button><br> 
+        GetAccountDetails <br>
+        </p>
         <div class="parameters">
             <h4>Parameters</h4>
             
         </div>
-        <div class="request_body">
-            <h4>Request Body</h4>
+        <div class="response-bodies">
+            <h4>Responses</h4>
             <div class="response">
             <h5>200</h5>
             <p><strong>Description:</strong> Account Details Fetched</p>
-            <p><strong>Schema:</strong> <div class="response">
+            <p><strong>Schema:</strong> 
                         <h4>200</h4>
                         <ul class="response-properties">
                         <li>profile: undefined</li><li>addresses: array</li><li>payment_methods: array</li><li>has_bolt_account: boolean</li>
-                        </ul>
-                        </div> </p>
+                        </ul> </p>
             </div>
         </div>
         </div> <div class="post">
         <h3>POST</h3>
-        <p>Create a Bolt shopping account.</p>
-        <p>Account</p>
-        <p>CreateBoltAccount</p>
+        <p>Create a Bolt shopping account.<br>
+        <button class="tag">Account</button><br>
+        CreateBoltAccount<br>
+        </p>
         <div class="parameters">
             <h4>Parameters</h4>
             
         </div>
-        <div class="request_body">
-            <h4>Request Body</h4>
+        <div class="response-bodies">
+            <h4>Responses</h4>
             <div class="response">
             <h5>200</h5>
             <p><strong>Description:</strong> Account Created</p>
-            <p><strong>Schema:</strong> <div class="response">
+            <p><strong>Schema:</strong> 
                         <h4>200</h4>
                         <ul class="response-properties">
                         <li>profile: undefined</li><li>addresses: array</li><li>payment_methods: array</li><li>has_bolt_account: boolean</li>
-                        </ul>
-                        </div> </p>
+                        </ul> </p>
             </div>
         </div>
         </div>  
       </section><section class="set"> 
-      <h2>v1</h2>
+      
       <div class="path">/v1/account/exists</div>
       <div class="get">
         <h3>GET</h3>
-        <p>Check whether an account exists using `email` as the unique identifier.</p>
-        <p>Account</p>
-        <p>DetectAccount</p>
+        <p>Check whether an account exists using `email` as the unique identifier. <br> 
+        <button class="tag">Account</button><br> 
+        DetectAccount <br>
+        </p>
         <div class="parameters">
             <h4>Parameters</h4>
             <div class="parameter">
@@ -181,69 +210,68 @@
                     <p><strong>Required:</strong> true</p>
                     </div>
         </div>
-        <div class="request_body">
-            <h4>Request Body</h4>
+        <div class="response-bodies">
+            <h4>Responses</h4>
             <div class="response">
             <h5>200</h5>
             <p><strong>Description:</strong> Has Bolt Account</p>
-            <p><strong>Schema:</strong> <div class="response">
+            <p><strong>Schema:</strong> 
                         <h4>200</h4>
                         <ul class="response-properties">
                         <li>has_bolt_account: boolean</li>
-                        </ul>
-                        </div> </p>
+                        </ul> </p>
             </div><div class="response">
             <h5>422</h5>
             <p><strong>Description:</strong> Missing Email Query Parameter</p>
-            <p><strong>Schema:</strong> <div class="response">
+            <p><strong>Schema:</strong> 
                         <h4>200</h4>
                         <ul class="response-properties">
                         <li>has_bolt_account: boolean</li>
-                        </ul>
-                        </div> </p>
+                        </ul> </p>
             </div>
         </div>
         </div>   
       </section><section class="set"> 
-      <h2>v1</h2>
+      
       <div class="path">/v1/account/payment_methods</div>
        <div class="post">
         <h3>POST</h3>
-        <p>Add a payment method to a shopper's Bolt account Wallet; this request must come from your backend. You can also tokenize this payment information using our javascript library function.</p>
-        <p>Account</p>
-        <p>AddPaymentMethod</p>
+        <p>Add a payment method to a shopper's Bolt account Wallet; this request must come from your backend. You can also tokenize this payment information using our javascript library function.<br>
+        <button class="tag">Account</button><br>
+        AddPaymentMethod<br>
+        </p>
         <div class="parameters">
             <h4>Parameters</h4>
             
         </div>
-        <div class="request_body">
-            <h4>Request Body</h4>
+        <div class="response-bodies">
+            <h4>Responses</h4>
             <div class="response">
             <h5>200</h5>
             <p><strong>Description:</strong> Payment Method Added</p>
-            <p><strong>Schema:</strong> <div class="response">
+            <p><strong>Schema:</strong> 
                         <h4>200</h4>
                         <ul class="response-properties">
                         <li>id: string</li><li>type: string</li><li>last4: string</li><li>billing_address: undefined</li>
-                        </ul>
-                        </div> </p>
+                        </ul> </p>
             </div>
         </div>
         </div>  
       </section><section class="set"> 
-      <h2>v1</h2>
+      
       <div class="path">/v1/merchant/metrics</div>
        <div class="post">
         <h3>POST</h3>
-        <p>This endpoint listens for when a merchant uploads metrics.</p>
-        <p>Merchant</p>
-        <p>AddMerchantMetrics</p>
+        <p>This endpoint listens for when a merchant uploads metrics.<br>
+        <button class="tag">Merchant</button><br>
+        AddMerchantMetrics<br>
+        </p>
         <div class="parameters">
             <h4>Parameters</h4>
             
         </div>
-        <div class="request_body">
-            <h4>Request Body</h4>
+        <div class="response-bodies">
+            <h4>Responses</h4>
             <div class="response">
             <h5>200</h5>
             <p><strong>Description:</strong> No Response expected.</p>
@@ -252,118 +280,116 @@
         </div>
         </div>  
       </section><section class="set"> 
-      <h2>v1</h2>
+      
       <div class="path">/v1/merchant/orders</div>
        <div class="post">
         <h3>POST</h3>
-        <p>Make a request to this endpoint to create a Bolt order, generate a Bolt order token, and initiate the checkout process. A Bolt order token is required for Bolt orders; see Non-Bolt orders for alternative use cases.</p>
-        <p>Orders</p>
-        <p>CreateOrderToken</p>
+        <p>Make a request to this endpoint to create a Bolt order, generate a Bolt order token, and initiate the checkout process. A Bolt order token is required for Bolt orders; see Non-Bolt orders for alternative use cases.<br>
+        <button class="tag">Orders</button><br>
+        CreateOrderToken<br>
+        </p>
         <div class="parameters">
             <h4>Parameters</h4>
             
         </div>
-        <div class="request_body">
-            <h4>Request Body</h4>
+        <div class="response-bodies">
+            <h4>Responses</h4>
             <div class="response">
             <h5>200</h5>
             <p><strong>Description:</strong> Token Generation Successful</p>
-            <p><strong>Schema:</strong> <div class="response">
+            <p><strong>Schema:</strong> 
                         <h4>200</h4>
                         <ul class="response-properties">
                         <li>token: string</li><li>cart: undefined</li><li>external_data: undefined</li><li>user_note: string</li><li>dynamic_content: undefined</li>
-                        </ul>
-                        </div> </p>
+                        </ul> </p>
             </div><div class="response">
             <h5>400</h5>
             <p><strong>Description:</strong> Generic Error Schema</p>
-            <p><strong>Schema:</strong> <div class="response">
+            <p><strong>Schema:</strong> 
                         <h4>400</h4>
                         <ul class="response-properties">
                         <li>result: object</li><li>errors: array</li>
-                        </ul>
-                        </div> </p>
+                        </ul> </p>
             </div><div class="response">
             <h5>403</h5>
             <p><strong>Description:</strong> Generic Error Schema</p>
-            <p><strong>Schema:</strong> <div class="response">
+            <p><strong>Schema:</strong> 
                         <h4>403</h4>
                         <ul class="response-properties">
                         <li>needs_to_be_documented: string</li>
-                        </ul>
-                        </div> </p>
+                        </ul> </p>
             </div><div class="response">
             <h5>422</h5>
             <p><strong>Description:</strong> Generic Error Schema</p>
-            <p><strong>Schema:</strong> <div class="response">
+            <p><strong>Schema:</strong> 
                         <h4>422</h4>
                         <ul class="response-properties">
                         <li>needs_to_be_documented: string</li>
-                        </ul>
-                        </div> </p>
+                        </ul> </p>
             </div>
         </div>
         </div>  
       </section><section class="set"> 
-      <h2>v1</h2>
+      
       <div class="path">/v1/merchant/payment_methods</div>
        <div class="post">
         <h3>POST</h3>
-        <p>This endpoint ...</p>
-        <p>Merchant</p>
-        <p>CreatePaymentMethods</p>
+        <p>This endpoint ...<br>
+        <button class="tag">Merchant</button><br>
+        CreatePaymentMethods<br>
+        </p>
         <div class="parameters">
             <h4>Parameters</h4>
             
         </div>
-        <div class="request_body">
-            <h4>Request Body</h4>
+        <div class="response-bodies">
+            <h4>Responses</h4>
             <div class="response">
             <h5>200</h5>
             <p><strong>Description:</strong> Created Payment Method</p>
-            <p><strong>Schema:</strong> <div class="response">
+            <p><strong>Schema:</strong> 
                         <h4>200</h4>
                         <ul class="response-properties">
                         <li>id: string</li><li>type: string</li><li>last4: string</li><li>billing_address: undefined</li>
-                        </ul>
-                        </div> </p>
+                        </ul> </p>
             </div>
         </div>
         </div>  
       </section><section class="set"> 
-      <h2>v1</h2>
+      
       <div class="path">/v1/merchant/sign</div>
        <div class="post">
         <h3>POST</h3>
-        <p>This endpoint...</p>
-        <p>Merchant</p>
-        <p>SignMerchantUserID</p>
+        <p>This endpoint...<br>
+        <button class="tag">Merchant</button><br>
+        SignMerchantUserID<br>
+        </p>
         <div class="parameters">
             <h4>Parameters</h4>
             
         </div>
-        <div class="request_body">
-            <h4>Request Body</h4>
+        <div class="response-bodies">
+            <h4>Responses</h4>
             <div class="response">
             <h5>200</h5>
             <p><strong>Description:</strong> Merchant User ID Signed</p>
-            <p><strong>Schema:</strong> <div class="response">
+            <p><strong>Schema:</strong> 
                         <h4>200</h4>
                         <ul class="response-properties">
                         <li>merchant_user_id: string</li><li>signature: string</li><li>nonce: string</li>
-                        </ul>
-                        </div> </p>
+                        </ul> </p>
             </div>
         </div>
         </div>  
       </section><section class="set"> 
-      <h2>v1</h2>
+      
       <div class="path">/v1/merchant/statement</div>
        <div class="post">
         <h3>POST</h3>
-        <p>Get a pre-signed URL for the requested statement file.</p>
-        <p>Merchant</p>
-        <p>statements</p>
+        <p>Get a pre-signed URL for the requested statement file.<br>
+        <button class="tag">Merchant</button><br>
+        statements<br>
+        </p>
         <div class="parameters">
             <h4>Parameters</h4>
             <div class="parameter">
@@ -377,8 +403,8 @@ capture payment twice or create order twice etc.
                     <p><strong>Required:</strong> true</p>
                     </div>
         </div>
-        <div class="request_body">
-            <h4>Request Body</h4>
+        <div class="response-bodies">
+            <h4>Responses</h4>
             <div class="response">
             <h5>200</h5>
             <p><strong>Description:</strong> Statements Fetch Successful</p>
@@ -386,47 +412,45 @@ capture payment twice or create order twice etc.
             </div><div class="response">
             <h5>403</h5>
             <p><strong>Description:</strong> Generic Error Schema</p>
-            <p><strong>Schema:</strong> <div class="response">
+            <p><strong>Schema:</strong> 
                         <h4>403</h4>
                         <ul class="response-properties">
                         <li>needs_to_be_documented: string</li>
-                        </ul>
-                        </div> </p>
+                        </ul> </p>
             </div><div class="response">
             <h5>404</h5>
             <p><strong>Description:</strong> Generic Error Schema</p>
-            <p><strong>Schema:</strong> <div class="response">
+            <p><strong>Schema:</strong> 
                         <h4>404</h4>
                         <ul class="response-properties">
                         <li>needs_to_be_documented: string</li>
-                        </ul>
-                        </div> </p>
+                        </ul> </p>
             </div><div class="response">
             <h5>422</h5>
             <p><strong>Description:</strong> Generic Error Schema</p>
-            <p><strong>Schema:</strong> <div class="response">
+            <p><strong>Schema:</strong> 
                         <h4>422</h4>
                         <ul class="response-properties">
                         <li>needs_to_be_documented: string</li>
-                        </ul>
-                        </div> </p>
+                        </ul> </p>
             </div>
         </div>
         </div>  
       </section><section class="set"> 
-      <h2>v1</h2>
+      
       <div class="path">/v1/merchant/track_shipment</div>
        <div class="post">
         <h3>POST</h3>
-        <p>This endpoint creates an Easypost tracker to get shipment status updates.</p>
-        <p>Orders</p>
-        <p>TrackShipment</p>
+        <p>This endpoint creates an Easypost tracker to get shipment status updates.<br>
+        <button class="tag">Orders</button><br>
+        TrackShipment<br>
+        </p>
         <div class="parameters">
             <h4>Parameters</h4>
             
         </div>
-        <div class="request_body">
-            <h4>Request Body</h4>
+        <div class="response-bodies">
+            <h4>Responses</h4>
             <div class="response">
             <h5>200</h5>
             <p><strong>Description:</strong> No JSON response should be expected.</p>
@@ -435,40 +459,41 @@ capture payment twice or create order twice etc.
         </div>
         </div>  
       </section><section class="set"> 
-      <h2>v1</h2>
+      
       <div class="path">/v1/merchant/transactions/async_credit</div>
        <div class="post">
         <h3>POST</h3>
-        <p>This endpoint ...</p>
-        <p>Transactions</p>
-        <p>Async Credit</p>
+        <p>This endpoint ...<br>
+        <button class="tag">Transactions</button><br>
+        Async Credit<br>
+        </p>
         <div class="parameters">
             <h4>Parameters</h4>
             
         </div>
-        <div class="request_body">
-            <h4>Request Body</h4>
+        <div class="response-bodies">
+            <h4>Responses</h4>
             <div class="response">
             <h5>200</h5>
             <p><strong>Description:</strong> TBD</p>
-            <p><strong>Schema:</strong> <div class="response">
+            <p><strong>Schema:</strong> 
                         <h4>200</h4>
                         <ul class="response-properties">
                         <li>needs_to_be_documented: string</li>
-                        </ul>
-                        </div> </p>
+                        </ul> </p>
             </div>
         </div>
         </div>  
       </section><section class="set"> 
-      <h2>v1</h2>
+      
       <div class="path">/v1/merchant/transactions/capture</div>
        <div class="post">
         <h3>POST</h3>
         <p>This captures funds for the designated transaction. A capture can be done for any partial amount or for the total authorized amount. *Note that the actual JSON response will return all transaction details, but the fields documented below are the only fields relevant to this request.*
-</p>
-        <p>Transactions</p>
-        <p>CaptureTransaction</p>
+<br>
+        <button class="tag">Transactions</button><br>
+        CaptureTransaction<br>
+        </p>
         <div class="parameters">
             <h4>Parameters</h4>
             <div class="parameter">
@@ -482,56 +507,53 @@ capture payment twice or create order twice etc.
                     <p><strong>Required:</strong> true</p>
                     </div>
         </div>
-        <div class="request_body">
-            <h4>Request Body</h4>
+        <div class="response-bodies">
+            <h4>Responses</h4>
             <div class="response">
             <h5>200</h5>
             <p><strong>Description:</strong> Capture Successful</p>
-            <p><strong>Schema:</strong> <div class="response">
+            <p><strong>Schema:</strong> 
                         <h4>200</h4>
                         <ul class="response-properties">
                         <li>id: string</li><li>type: undefined</li><li>processor: string</li><li>date: number</li><li>reference: string</li><li>status: undefined</li><li>from_consumer: undefined</li><li>to_consumer: undefined</li><li>from_credit_card: undefined</li><li>to_credit_card: undefined</li><li>amount: undefined</li><li>authorization: undefined</li><li>capture: undefined</li><li>captures: array</li><li>credit: undefined</li><li>merchant_division: undefined</li><li>merchant: undefined</li><li>properties: object</li><li>indemnification_decision: string</li><li>indemnification_reason: string</li><li>last_viewed_utc: number</li><li>view_status: string</li><li>last4: string</li><li>risk_insights: undefined</li><li>order_decision: undefined</li><li>merchant_order_number: string</li><li>splits: array</li><li>review_ticket: undefined</li>
-                        </ul>
-                        </div> </p>
+                        </ul> </p>
             </div><div class="response">
             <h5>403</h5>
             <p><strong>Description:</strong> Forbidden</p>
-            <p><strong>Schema:</strong> <div class="response">
+            <p><strong>Schema:</strong> 
                         <h4>200</h4>
                         <ul class="response-properties">
                         <li>id: string</li><li>type: undefined</li><li>processor: string</li><li>date: number</li><li>reference: string</li><li>status: undefined</li><li>from_consumer: undefined</li><li>to_consumer: undefined</li><li>from_credit_card: undefined</li><li>to_credit_card: undefined</li><li>amount: undefined</li><li>authorization: undefined</li><li>capture: undefined</li><li>captures: array</li><li>credit: undefined</li><li>merchant_division: undefined</li><li>merchant: undefined</li><li>properties: object</li><li>indemnification_decision: string</li><li>indemnification_reason: string</li><li>last_viewed_utc: number</li><li>view_status: string</li><li>last4: string</li><li>risk_insights: undefined</li><li>order_decision: undefined</li><li>merchant_order_number: string</li><li>splits: array</li><li>review_ticket: undefined</li>
-                        </ul>
-                        </div> </p>
+                        </ul> </p>
             </div><div class="response">
             <h5>404</h5>
             <p><strong>Description:</strong> Generic Error Schema</p>
-            <p><strong>Schema:</strong> <div class="response">
+            <p><strong>Schema:</strong> 
                         <h4>404</h4>
                         <ul class="response-properties">
                         <li>needs_to_be_documented: string</li>
-                        </ul>
-                        </div> </p>
+                        </ul> </p>
             </div><div class="response">
             <h5>422</h5>
             <p><strong>Description:</strong> Unprocessable Entity</p>
-            <p><strong>Schema:</strong> <div class="response">
+            <p><strong>Schema:</strong> 
                         <h4>404</h4>
                         <ul class="response-properties">
                         <li>needs_to_be_documented: string</li>
-                        </ul>
-                        </div> </p>
+                        </ul> </p>
             </div>
         </div>
         </div>  
       </section><section class="set"> 
-      <h2>v1</h2>
+      
       <div class="path">/v1/merchant/transactions/credit</div>
        <div class="post">
         <h3>POST</h3>
         <p>This refunds a captured transaction. Refunds can be done for any partial amount or for the total authorized amount. The `CreditCardRefund` response contains only the most relevant fields and is not a full response; see the `TransactionDetails` response for a full example.
-</p>
-        <p>Transactions</p>
-        <p>refund</p>
+<br>
+        <button class="tag">Transactions</button><br>
+        refund<br>
+        </p>
         <div class="parameters">
             <h4>Parameters</h4>
             <div class="parameter">
@@ -545,8 +567,8 @@ capture payment twice or create order twice etc.
                     <p><strong>Required:</strong> true</p>
                     </div>
         </div>
-        <div class="request_body">
-            <h4>Request Body</h4>
+        <div class="response-bodies">
+            <h4>Responses</h4>
             <div class="response">
             <h5>200</h5>
             <p><strong>Description:</strong> Refund Successful</p>
@@ -554,42 +576,40 @@ capture payment twice or create order twice etc.
             </div><div class="response">
             <h5>403</h5>
             <p><strong>Description:</strong> Generic Error Schema</p>
-            <p><strong>Schema:</strong> <div class="response">
+            <p><strong>Schema:</strong> 
                         <h4>403</h4>
                         <ul class="response-properties">
                         <li>needs_to_be_documented: string</li>
-                        </ul>
-                        </div> </p>
+                        </ul> </p>
             </div><div class="response">
             <h5>404</h5>
             <p><strong>Description:</strong> Generic Error Schema</p>
-            <p><strong>Schema:</strong> <div class="response">
+            <p><strong>Schema:</strong> 
                         <h4>404</h4>
                         <ul class="response-properties">
                         <li>needs_to_be_documented: string</li>
-                        </ul>
-                        </div> </p>
+                        </ul> </p>
             </div><div class="response">
             <h5>422</h5>
             <p><strong>Description:</strong> Generic Error Schema</p>
-            <p><strong>Schema:</strong> <div class="response">
+            <p><strong>Schema:</strong> 
                         <h4>422</h4>
                         <ul class="response-properties">
                         <li>needs_to_be_documented: string</li>
-                        </ul>
-                        </div> </p>
+                        </ul> </p>
             </div>
         </div>
         </div>  
       </section><section class="set"> 
-      <h2>v1</h2>
+      
       <div class="path">/v1/merchant/transactions/void</div>
        <div class="post">
         <h3>POST</h3>
         <p>This voids the authorization for a given transaction. Voids must be completed before the authorization is captured. Although the response returns all transaction details, only `id` and `status` are needed. 
-</p>
-        <p>Transactions</p>
-        <p>void</p>
+<br>
+        <button class="tag">Transactions</button><br>
+        void<br>
+        </p>
         <div class="parameters">
             <h4>Parameters</h4>
             <div class="parameter">
@@ -603,8 +623,8 @@ capture payment twice or create order twice etc.
                     <p><strong>Required:</strong> true</p>
                     </div>
         </div>
-        <div class="request_body">
-            <h4>Request Body</h4>
+        <div class="response-bodies">
+            <h4>Responses</h4>
             <div class="response">
             <h5>200</h5>
             <p><strong>Description:</strong> Void Successful</p>
@@ -612,32 +632,31 @@ capture payment twice or create order twice etc.
             </div><div class="response">
             <h5>403</h5>
             <p><strong>Description:</strong> Generic Error Schema</p>
-            <p><strong>Schema:</strong> <div class="response">
+            <p><strong>Schema:</strong> 
                         <h4>403</h4>
                         <ul class="response-properties">
                         <li>needs_to_be_documented: string</li>
-                        </ul>
-                        </div> </p>
+                        </ul> </p>
             </div><div class="response">
             <h5>404</h5>
             <p><strong>Description:</strong> Generic Error Schema</p>
-            <p><strong>Schema:</strong> <div class="response">
+            <p><strong>Schema:</strong> 
                         <h4>403</h4>
                         <ul class="response-properties">
                         <li>needs_to_be_documented: string</li>
-                        </ul>
-                        </div> </p>
+                        </ul> </p>
             </div>
         </div>
         </div>  
       </section><section class="set"> 
-      <h2>v1</h2>
+      
       <div class="path">/v1/merchant/transactions/authorize</div>
        <div class="post">
         <h3>POST</h3>
-        <p>This endpoint authorizes payments using both saved payment methods and unsaved payment methods. For guest-checkout flows and one-time payments, use the `MerchantCreditCardAuthorization` request example; for logged-in checkout flows using saved payment methods (either as a one-time purchase or as a reoccurring subscription), use the `MerchantCreditCardAuthorizationRecharge` request example.</p>
-        <p>Transactions</p>
-        <p>MerchantAuthorize</p>
+        <p>This endpoint authorizes payments using both saved payment methods and unsaved payment methods. For guest-checkout flows and one-time payments, use the `MerchantCreditCardAuthorization` request example; for logged-in checkout flows using saved payment methods (either as a one-time purchase or as a reoccurring subscription), use the `MerchantCreditCardAuthorizationRecharge` request example.<br>
+        <button class="tag">Transactions</button><br>
+        MerchantAuthorize<br>
+        </p>
         <div class="parameters">
             <h4>Parameters</h4>
             <div class="parameter">
@@ -657,28 +676,28 @@ capture payment twice or create order twice etc.
                     <p><strong>Required:</strong> false</p>
                     </div>
         </div>
-        <div class="request_body">
-            <h4>Request Body</h4>
+        <div class="response-bodies">
+            <h4>Responses</h4>
             <div class="response">
             <h5>200</h5>
             <p><strong>Description:</strong> Authorization Successful</p>
-            <p><strong>Schema:</strong> <div class="response">
+            <p><strong>Schema:</strong> 
                         <h4>200</h4>
                         <ul class="response-properties">
                         <li>transaction: undefined</li><li>external_outputs: undefined</li><li>is_verified_device_saved: boolean</li><li>redirect_url: string</li>
-                        </ul>
-                        </div> </p>
+                        </ul> </p>
             </div>
         </div>
         </div>  
       </section><section class="set"> 
-      <h2>v1</h2>
+      
       <div class="path">/v1/merchant/transactions/review</div>
        <div class="post">
         <h3>POST</h3>
-        <p>TBD</p>
-        <p>Transactions</p>
-        <p>ReviewTransaction</p>
+        <p>TBD<br>
+        <button class="tag">Transactions</button><br>
+        ReviewTransaction<br>
+        </p>
         <div class="parameters">
             <h4>Parameters</h4>
             <div class="parameter">
@@ -692,8 +711,8 @@ capture payment twice or create order twice etc.
                     <p><strong>Required:</strong> true</p>
                     </div>
         </div>
-        <div class="request_body">
-            <h4>Request Body</h4>
+        <div class="response-bodies">
+            <h4>Responses</h4>
             <div class="response">
             <h5>200</h5>
             <p><strong>Description:</strong> Transaction Details Received</p>
@@ -702,13 +721,14 @@ capture payment twice or create order twice etc.
         </div>
         </div>  
       </section><section class="set"> 
-      <h2>v1</h2>
+      
       <div class="path">/v1/merchant/transactions/{REFERENCE}</div>
       <div class="get">
         <h3>GET</h3>
-        <p>TBD</p>
-        <p>Transactions</p>
-        <p>GetTransactionDetails</p>
+        <p>TBD <br> 
+        <button class="tag">Transactions</button><br> 
+        GetTransactionDetails <br>
+        </p>
         <div class="parameters">
             <h4>Parameters</h4>
             <div class="parameter">
@@ -728,8 +748,8 @@ capture payment twice or create order twice etc.
                     <p><strong>Required:</strong> true</p>
                     </div>
         </div>
-        <div class="request_body">
-            <h4>Request Body</h4>
+        <div class="response-bodies">
+            <h4>Responses</h4>
             <div class="response">
             <h5>200</h5>
             <p><strong>Description:</strong> Transaction Details Received</p>
@@ -737,99 +757,97 @@ capture payment twice or create order twice etc.
             </div><div class="response">
             <h5>403</h5>
             <p><strong>Description:</strong> Generic Error Schema</p>
-            <p><strong>Schema:</strong> <div class="response">
+            <p><strong>Schema:</strong> 
                         <h4>403</h4>
                         <ul class="response-properties">
                         <li>needs_to_be_documented: string</li>
-                        </ul>
-                        </div> </p>
+                        </ul> </p>
             </div><div class="response">
             <h5>422</h5>
             <p><strong>Description:</strong> Generic Error Schema</p>
-            <p><strong>Schema:</strong> <div class="response">
+            <p><strong>Schema:</strong> 
                         <h4>422</h4>
                         <ul class="response-properties">
                         <li>needs_to_be_documented: string</li>
-                        </ul>
-                        </div> </p>
+                        </ul> </p>
             </div>
         </div>
         </div>   
       </section><section class="set"> 
-      <h2>v1</h2>
+      
       <div class="path">/v1/merchant/verify_signature</div>
        <div class="post">
         <h3>POST</h3>
-        <p>This endpoint ...</p>
-        <p>Merchant</p>
-        <p>VerifySignature</p>
+        <p>This endpoint ...<br>
+        <button class="tag">Merchant</button><br>
+        VerifySignature<br>
+        </p>
         <div class="parameters">
             <h4>Parameters</h4>
             
         </div>
-        <div class="request_body">
-            <h4>Request Body</h4>
+        <div class="response-bodies">
+            <h4>Responses</h4>
             <div class="response">
             <h5>200</h5>
             <p><strong>Description:</strong> Signature Verified</p>
-            <p><strong>Schema:</strong> <div class="response">
+            <p><strong>Schema:</strong> 
                         <h4>200</h4>
                         <ul class="response-properties">
                         <li>needs_to_be_documented: string</li>
-                        </ul>
-                        </div> </p>
+                        </ul> </p>
             </div>
         </div>
         </div>  
       </section><section class="set"> 
-      <h2>v1</h2>
+      
       <div class="path">/v1/merchant/identifiers</div>
       <div class="get">
         <h3>GET</h3>
-        <p>This endpoint returns the merchant's public ID and the [publishable key](https://help.bolt.com/developers/guides/checkout-guides/managed-checkout/custom-cart-guides/how-to-integrate/) related to the merchant division.</p>
-        <p>Merchant Identifiers</p>
-        <p>merchant-identifiers</p>
+        <p>This endpoint returns the merchant's public ID and the [publishable key](https://help.bolt.com/developers/guides/checkout-guides/managed-checkout/custom-cart-guides/how-to-integrate/) related to the merchant division. <br> 
+        <button class="tag">Merchant Identifiers</button><br> 
+        merchant-identifiers <br>
+        </p>
         <div class="parameters">
             <h4>Parameters</h4>
             
         </div>
-        <div class="request_body">
-            <h4>Request Body</h4>
+        <div class="response-bodies">
+            <h4>Responses</h4>
             <div class="response">
             <h5>200</h5>
             <p><strong>Description:</strong> Merchant Identifiers Retrieved</p>
-            <p><strong>Schema:</strong> <div class="response">
+            <p><strong>Schema:</strong> 
                         <h4>200</h4>
                         <ul class="response-properties">
                         <li>merchant_id: string</li><li>merchant_divisions: undefined</li>
-                        </ul>
-                        </div> </p>
+                        </ul> </p>
             </div><div class="response">
             <h5>403</h5>
             <p><strong>Description:</strong> Invalid Merchant API Key</p>
-            <p><strong>Schema:</strong> <div class="response">
+            <p><strong>Schema:</strong> 
                         <h4>200</h4>
                         <ul class="response-properties">
                         <li>merchant_id: string</li><li>merchant_divisions: undefined</li>
-                        </ul>
-                        </div> </p>
+                        </ul> </p>
             </div>
         </div>
         </div>   
       </section><section class="set"> 
-      <h2>v1</h2>
+      
       <div class="path">/v1/merchant/orders/update</div>
        <div class="post">
         <h3>POST</h3>
-        <p>This endpoint updates an order that has already been placed.</p>
-        <p>Orders</p>
-        <p>MerchantOrderUpdate</p>
+        <p>This endpoint updates an order that has already been placed.<br>
+        <button class="tag">Orders</button><br>
+        MerchantOrderUpdate<br>
+        </p>
         <div class="parameters">
             <h4>Parameters</h4>
             
         </div>
-        <div class="request_body">
-            <h4>Request Body</h4>
+        <div class="response-bodies">
+            <h4>Responses</h4>
             <div class="response">
             <h5>200</h5>
             <p><strong>Description:</strong> No JSON response should be expected.</p>
@@ -838,118 +856,119 @@ capture payment twice or create order twice etc.
         </div>
         </div>  
       </section><section class="set"> 
-      <h2>v1</h2>
+      
       <div class="path">/v1/non_bolt_order</div>
        <div class="post">
         <h3>POST</h3>
-        <p>This endpoint creates an order that does not use a Bolt order token.</p>
-        <p>Orders</p>
-        <p>CreateNonBoltOrder</p>
+        <p>This endpoint creates an order that does not use a Bolt order token.<br>
+        <button class="tag">Orders</button><br>
+        CreateNonBoltOrder<br>
+        </p>
         <div class="parameters">
             <h4>Parameters</h4>
             
         </div>
-        <div class="request_body">
-            <h4>Request Body</h4>
+        <div class="response-bodies">
+            <h4>Responses</h4>
             <div class="response">
             <h5>200</h5>
             <p><strong>Description:</strong> Non-Bolt Order Created</p>
-            <p><strong>Schema:</strong> <div class="response">
+            <p><strong>Schema:</strong> 
                         <h4>200</h4>
                         <ul class="response-properties">
                         <li>reference: string</li>
-                        </ul>
-                        </div> </p>
+                        </ul> </p>
             </div>
         </div>
         </div>  
       </section><section class="set"> 
-      <h2>v1</h2>
+      
       <div class="path">/v1/products</div>
       <div class="get">
         <h3>GET</h3>
-        <p>TBD</p>
-        <p>Products</p>
-        <p>GetProducts</p>
+        <p>TBD <br> 
+        <button class="tag">Products</button><br> 
+        GetProducts <br>
+        </p>
         <div class="parameters">
             <h4>Parameters</h4>
             
         </div>
-        <div class="request_body">
-            <h4>Request Body</h4>
+        <div class="response-bodies">
+            <h4>Responses</h4>
             <div class="response">
             <h5>200</h5>
             <p><strong>Description:</strong> Products Fetched</p>
-            <p><strong>Schema:</strong> <div class="response">
+            <p><strong>Schema:</strong> 
                         <h4>200</h4>
                         <ul class="response-properties">
                         <li>Current: undefined</li><li>Parent: undefined</li><li>Properties: array</li><li>Variants: array</li><li>NextCursor: string</li>
-                        </ul>
-                        </div> </p>
+                        </ul> </p>
             </div>
         </div>
         </div>   
       </section><section class="set"> 
-      <h2>v1</h2>
+      
       <div class="path">/v1/shipping_and_tax</div>
        <div class="post">
         <h3>POST</h3>
-        <p>TBD</p>
-        <p>Orders</p>
-        <p>ShippingAndTax</p>
+        <p>TBD<br>
+        <button class="tag">Orders</button><br>
+        ShippingAndTax<br>
+        </p>
         <div class="parameters">
             <h4>Parameters</h4>
             
         </div>
-        <div class="request_body">
-            <h4>Request Body</h4>
+        <div class="response-bodies">
+            <h4>Responses</h4>
             <div class="response">
             <h5>200</h5>
             <p><strong>Description:</strong> Shipping And Tax Successful</p>
-            <p><strong>Schema:</strong> <div class="response">
+            <p><strong>Schema:</strong> 
                         <h4>200</h4>
                         <ul class="response-properties">
                         <li>dynamic_content: undefined</li><li>in_store_pickup_options: array</li><li>shipping_options: array</li><li>ship_to_store_options: array</li><li>sub_total_tax: undefined</li>
-                        </ul>
-                        </div> </p>
+                        </ul> </p>
             </div>
         </div>
         </div>  
       </section><section class="set"> 
-      <h2>v1</h2>
+      
       <div class="path">/v1/statement</div>
       <div class="get">
         <h3>GET</h3>
-        <p>TBD</p>
-        <p>Merchant</p>
-        <p>GetStatementCSV</p>
+        <p>TBD <br> 
+        <button class="tag">Merchant</button><br> 
+        GetStatementCSV <br>
+        </p>
         <div class="parameters">
             <h4>Parameters</h4>
             
         </div>
-        <div class="request_body">
-            <h4>Request Body</h4>
+        <div class="response-bodies">
+            <h4>Responses</h4>
             <div class="response">
             <h5>200</h5>
             <p><strong>Description:</strong> Statement Fetched</p>
-            <p><strong>Schema:</strong> <div class="response">
+            <p><strong>Schema:</strong> 
                         <h4>200</h4>
                         <ul class="response-properties">
                         <li>needs_to_be_documented: string</li>
-                        </ul>
-                        </div> </p>
+                        </ul> </p>
             </div>
         </div>
         </div>   
       </section><section class="set"> 
-      <h2>v1</h2>
+      
       <div class="path">/v1/remote_checkout/order</div>
        <div class="post">
         <h3>POST</h3>
         <p>This is used for publisher implementation use cases. After the publisher has called Bolt to check product inventory for availability, an order can created through the `/remote_checkout/order` endpoint.
-</p>
-        <p>Orders</p>
-        <p>CreateRemoteOrder</p>
+<br>
+        <button class="tag">Orders</button><br>
+        CreateRemoteOrder<br>
+        </p>
         <div class="parameters">
             <h4>Parameters</h4>
             <div class="parameter">
@@ -975,37 +994,36 @@ capture payment twice or create order twice etc.
                     <p><strong>Required:</strong> true</p>
                     </div>
         </div>
-        <div class="request_body">
-            <h4>Request Body</h4>
+        <div class="response-bodies">
+            <h4>Responses</h4>
             <div class="response">
             <h5>200</h5>
             <p><strong>Description:</strong> Order Created Successfully</p>
-            <p><strong>Schema:</strong> <div class="response">
+            <p><strong>Schema:</strong> 
                         <h4>200</h4>
                         <ul class="response-properties">
                         <li>token: string</li>
-                        </ul>
-                        </div> </p>
+                        </ul> </p>
             </div><div class="response">
             <h5>422</h5>
             <p><strong>Description:</strong> Order Creation Failed</p>
-            <p><strong>Schema:</strong> <div class="response">
+            <p><strong>Schema:</strong> 
                         <h4>200</h4>
                         <ul class="response-properties">
                         <li>token: string</li>
-                        </ul>
-                        </div> </p>
+                        </ul> </p>
             </div>
         </div>
         </div>  
       </section><section class="set"> 
-      <h2>v1</h2>
+      
       <div class="path">/v1/products/catalog</div>
       <div class="get">
         <h3>GET</h3>
-        <p>tbd</p>
-        <p>Products</p>
-        <p>GetProductsCatalog</p>
+        <p>tbd <br> 
+        <button class="tag">Products</button><br> 
+        GetProductsCatalog <br>
+        </p>
         <div class="parameters">
             <h4>Parameters</h4>
             <div class="parameter">
@@ -1031,28 +1049,28 @@ capture payment twice or create order twice etc.
                     <p><strong>Required:</strong> true</p>
                     </div>
         </div>
-        <div class="request_body">
-            <h4>Request Body</h4>
+        <div class="response-bodies">
+            <h4>Responses</h4>
             <div class="response">
             <h5>200</h5>
             <p><strong>Description:</strong> Product Catalogue Retrieved</p>
-            <p><strong>Schema:</strong> <div class="response">
+            <p><strong>Schema:</strong> 
                         <h4>200</h4>
                         <ul class="response-properties">
                         <li>Catalog: array</li><li>Cursor: string</li>
-                        </ul>
-                        </div> </p>
+                        </ul> </p>
             </div>
         </div>
         </div>   
       </section><section class="set"> 
-      <h2>v1</h2>
+      
       <div class="path">/v1/shipments/mock_bolt_shipping</div>
        <div class="post">
         <h3>POST</h3>
-        <p>This endpoint simulates tracking an order's shipment.</p>
-        <p>Orders,Testing</p>
-        <p>TestShipping</p>
+        <p>This endpoint simulates tracking an order's shipment.<br>
+        <button class="tag">Orders</button><button class="tag">Testing</button><br>
+        TestShipping<br>
+        </p>
         <div class="parameters">
             <h4>Parameters</h4>
             <div class="parameter">
@@ -1063,8 +1081,8 @@ capture payment twice or create order twice etc.
                     <p><strong>Required:</strong> true</p>
                     </div>
         </div>
-        <div class="request_body">
-            <h4>Request Body</h4>
+        <div class="response-bodies">
+            <h4>Responses</h4>
             <div class="response">
             <h5>200</h5>
             <p><strong>Description:</strong> Success - No Details</p>
@@ -1076,12 +1094,11 @@ capture payment twice or create order twice etc.
             </div><div class="response">
             <h5>422</h5>
             <p><strong>Description:</strong> OderTrackingTesting With Error Messages</p>
-            <p><strong>Schema:</strong> <div class="response">
+            <p><strong>Schema:</strong> 
                         <h4>422</h4>
                         <ul class="response-properties">
                         <li>result: object</li><li>errors: array</li>
-                        </ul>
-                        </div> </p>
+                        </ul> </p>
             </div>
         </div>
         </div>  
