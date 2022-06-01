@@ -21,6 +21,14 @@ body {
     color: #000;
     background-color: #f7f7f7;
 }
+
+button {
+    background-color: #000;
+    color: #fff;
+    border-radius: 10px;
+    padding: 5px;
+}
+
 p {
     margin: 0 0 10px;
     padding: 0px;
@@ -125,32 +133,25 @@ p {
     width: 90%;
     text-align: center;
 }
-
-
-
-button {
-    background-color: #000;
-    color: #fff;
-    border-radius: 10px;
-    padding: 5px;
-}
-
-
 </style>`
+
+////////////////////////////////////////////////////////////////////////////////////////////
 
 // Create section in the DOM for each path and include its methods.
 
 const generateAllPathDetails = (paths) => {
     const details = Object.keys(paths).map(path => {
-        const path_name = path.split('/')[2]
+        // const path_name = path.split('/')[2] // can be used to display the path name in the html
         const path_details = generatePathMethods(path)
       return `<section class="set"> 
-      
       <div class="path">${path}</div>
       ${path_details}
       </section>`
     }).join('')
     paths_details = details 
+    // At this point, the CSS and path details are ready to be added to the html.
+    htmlContent.push(css_html)
+    htmlContent.push(paths_details)
 
 }
 
@@ -166,90 +167,41 @@ const generatePathMethods = (path) => {
     let delete_html = ''
     // Generate the html for each method and store it in the variables above.
     if (get_raw){
-        
-        const parameters = generateMethodParameters(get_raw)
-        const response_bodies = generateResponses(get_raw)
-        const tags = generateMethodTags(get_raw.tags)
-
-        get_html = `<div class="get">
-        <h3>GET</h3>
-        <p>${get_raw.description} <br> 
-        ${tags}<br> 
-        ${get_raw.operationId} <br>
-        </p>
-        <div class="parameters">
-            <h4>Parameters</h4>
-            ${parameters}
-        </div>
-        <div class="response-bodies">
-            <h4>Responses</h4>
-            ${response_bodies}
-        </div>
-        </div>`
+        get_html = generateMethodDetails(get_raw, 'GET')
     }
     if (post_raw){
-        const parameters = generateMethodParameters(post_raw)
-        const response_bodies = generateResponses(post_raw)
-        const tags = generateMethodTags(post_raw.tags)
-
-        post_html = `<div class="post">
-        <h3>POST</h3>
-        <p>${post_raw.description}<br>
-        ${tags}<br>
-        ${post_raw.operationId}<br>
-        </p>
-        <div class="parameters">
-            <h4>Parameters</h4>
-            ${parameters}
-        </div>
-        <div class="response-bodies">
-            <h4>Responses</h4>
-            ${response_bodies}
-        </div>
-        </div>`
+        post_html = generateMethodDetails(post_raw, 'POST')
     }
     if (put_raw){
-        const parameters = generateMethodParameters(put_raw)
-        const response_bodies = generateResponses(put_raw)
-        const tags = generateMethodTags(put_raw.tags)
-        put_html = `<div class="put">
-        <h3>PUT</h3>
-        <p>${put_raw.description}<br>
-        ${tags}<br>
-        ${put_raw.operationId}<br>
-        </p>
-        <div class="parameters">
-            <h4>Parameters</h4>
-            ${parameters}
-            </div>
-        <div class="response-bodies">
-            <h4>Responses</h4>
-            ${response_bodies}
-        </div>
-        </div>`
+        put_html = generateMethodDetails(put_raw, 'PUT')
     }
     if (delete_raw){
-        const parameters = generateMethodParameters(delete_raw)
-        const response_bodies = generateResponses(delete_raw)
-        const tags = generateMethodTags(delete_raw.tags)
-        delete_html = `<div class="delete">
-        <h3>DELETE</h3>
-        <p>${delete_raw.description}<br>
-        ${tags}<br>
-        ${delete_raw.operationId}<br>
-        </p>
-        <div class="parameters">
-            <h4>Parameters</h4>
-            ${parameters}
-            </div>
-        <div class="response-bodies">
-            <h4>Responses</h4>
-            ${response_bodies}
-         </div>
-        </div>`
+        delete_html = generateMethodDetails(delete_raw, 'DELETE')
     }
     let all_methods = `${get_html} ${post_html} ${put_html} ${delete_html}`
     return all_methods
+}
+
+const generateMethodDetails = (method, type) => {
+    const parameters = generateMethodParameters(method)
+    const response_bodies = generateResponses(method)
+    const tags = generateMethodTags(method.tags)
+    const method_html = `<div class="${type.toLowerCase()}">
+    <h3>${type}</h3>
+    <p>${method.description}<br>
+    ${tags}<br>
+    ${method.operationId}<br>
+    </p>
+    <div class="parameters">
+        <h4>Parameters</h4>
+        ${parameters}
+        </div>
+    <div class="response-bodies">
+        <h4>Responses</h4>
+        ${response_bodies}
+        </div>
+    </div>`
+    return method_html
 }
 
 const generateMethodTags = (tags) => { 
@@ -260,7 +212,6 @@ const generateMethodTags = (tags) => {
     return tag_buttons.join('')
 
 }
-
 
 const generateMethodParameters = (method) => {
     const method_parameters = []
@@ -284,7 +235,6 @@ const generateMethodParameters = (method) => {
     }
     return method_parameters.join('')
 }
-
 
 const generateResponses = (method) => {
     let responses_content = ''
@@ -343,20 +293,14 @@ const generateResponses = (method) => {
     return responses_content
 }
 
-
-
 // Create the index.html file for the documentation.
 const updateHtmlFile = () => {
     fs.writeFileSync(path.join(__dirname, '/index.html'), htmlContent.join(''))
-    }
+}
 
-
-// Execute the function that generates the html for each path.
+////////////////////////////////////////////////////////////////////////////////
 
 generateAllPathDetails(paths)
-
-    htmlContent.push(css_html)
-    htmlContent.push(paths_details)
 
 updateHtmlFile()
 

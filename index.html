@@ -6,6 +6,14 @@ body {
     color: #000;
     background-color: #f7f7f7;
 }
+
+button {
+    background-color: #000;
+    color: #fff;
+    border-radius: 10px;
+    padding: 5px;
+}
+
 p {
     margin: 0 0 10px;
     padding: 0px;
@@ -110,55 +118,42 @@ p {
     width: 90%;
     text-align: center;
 }
-
-
-
-button {
-    background-color: #000;
-    color: #fff;
-    border-radius: 10px;
-    padding: 5px;
-}
-
-
 </style><section class="set"> 
-      
       <div class="path">/v1/account/addresses</div>
        <div class="post">
-        <h3>POST</h3>
-        <p>Add an address to a shopper's account address book.<br>
-        <button class="tag">Account</button><br>
-        AddAddress<br>
-        </p>
-        <div class="parameters">
-            <h4>Parameters</h4>
-            
+    <h3>POST</h3>
+    <p>Add an address to a shopper's account address book.<br>
+    <button class="tag">Account</button><br>
+    AddAddress<br>
+    </p>
+    <div class="parameters">
+        <h4>Parameters</h4>
+        
         </div>
-        <div class="response-bodies">
-            <h4>Responses</h4>
-            <div class="response">
+    <div class="response-bodies">
+        <h4>Responses</h4>
+        <div class="response">
             <h5>200</h5>
             <p><strong>Description:</strong> Address Added Successfully</p>
             <p><strong>Schema:</strong>  </p>
             </div>
         </div>
-        </div>  
+    </div>  
       </section><section class="set"> 
-      
       <div class="path">/v1/account</div>
       <div class="get">
-        <h3>GET</h3>
-        <p>Fetch a shopper's account details to pre-fill checkout fields. This request must come from your backend. For PCI compliance, only limited information is returned for each credit card available in the shopper’s wallet. <br> 
-        <button class="tag">Account</button><br> 
-        GetAccountDetails <br>
-        </p>
-        <div class="parameters">
-            <h4>Parameters</h4>
-            
+    <h3>GET</h3>
+    <p>Fetch a shopper's account details to pre-fill checkout fields. This request must come from your backend. For PCI compliance, only limited information is returned for each credit card available in the shopper’s wallet.<br>
+    <button class="tag">Account</button><br>
+    GetAccountDetails<br>
+    </p>
+    <div class="parameters">
+        <h4>Parameters</h4>
+        
         </div>
-        <div class="response-bodies">
-            <h4>Responses</h4>
-            <div class="response">
+    <div class="response-bodies">
+        <h4>Responses</h4>
+        <div class="response">
             <h5>200</h5>
             <p><strong>Description:</strong> Account Details Fetched</p>
             <p><strong>Schema:</strong> 
@@ -168,19 +163,19 @@ button {
                         </ul> </p>
             </div>
         </div>
-        </div> <div class="post">
-        <h3>POST</h3>
-        <p>Create a Bolt shopping account.<br>
-        <button class="tag">Account</button><br>
-        CreateBoltAccount<br>
-        </p>
-        <div class="parameters">
-            <h4>Parameters</h4>
-            
+    </div> <div class="post">
+    <h3>POST</h3>
+    <p>Create a Bolt shopping account.<br>
+    <button class="tag">Account</button><br>
+    CreateBoltAccount<br>
+    </p>
+    <div class="parameters">
+        <h4>Parameters</h4>
+        
         </div>
-        <div class="response-bodies">
-            <h4>Responses</h4>
-            <div class="response">
+    <div class="response-bodies">
+        <h4>Responses</h4>
+        <div class="response">
             <h5>200</h5>
             <p><strong>Description:</strong> Account Created</p>
             <p><strong>Schema:</strong> 
@@ -190,19 +185,18 @@ button {
                         </ul> </p>
             </div>
         </div>
-        </div>  
+    </div>  
       </section><section class="set"> 
-      
       <div class="path">/v1/account/exists</div>
       <div class="get">
-        <h3>GET</h3>
-        <p>Check whether an account exists using `email` as the unique identifier. <br> 
-        <button class="tag">Account</button><br> 
-        DetectAccount <br>
-        </p>
-        <div class="parameters">
-            <h4>Parameters</h4>
-            <div class="parameter">
+    <h3>GET</h3>
+    <p>Check whether an account exists using `email` as the unique identifier.<br>
+    <button class="tag">Account</button><br>
+    DetectAccount<br>
+    </p>
+    <div class="parameters">
+        <h4>Parameters</h4>
+        <div class="parameter">
                     <h5>email</h5>
                     <p><strong>Type:</strong> query</p>
                     <p><strong>Format:</strong> string</p>
@@ -210,9 +204,9 @@ button {
                     <p><strong>Required:</strong> true</p>
                     </div>
         </div>
-        <div class="response-bodies">
-            <h4>Responses</h4>
-            <div class="response">
+    <div class="response-bodies">
+        <h4>Responses</h4>
+        <div class="response">
             <h5>200</h5>
             <p><strong>Description:</strong> Has Bolt Account</p>
             <p><strong>Schema:</strong> 
@@ -230,23 +224,22 @@ button {
                         </ul> </p>
             </div>
         </div>
-        </div>   
+    </div>   
       </section><section class="set"> 
-      
       <div class="path">/v1/account/payment_methods</div>
        <div class="post">
-        <h3>POST</h3>
-        <p>Add a payment method to a shopper's Bolt account Wallet; this request must come from your backend. You can also tokenize this payment information using our javascript library function.<br>
-        <button class="tag">Account</button><br>
-        AddPaymentMethod<br>
-        </p>
-        <div class="parameters">
-            <h4>Parameters</h4>
-            
+    <h3>POST</h3>
+    <p>Add a payment method to a shopper's Bolt account Wallet; this request must come from your backend. You can also tokenize this payment information using our javascript library function.<br>
+    <button class="tag">Account</button><br>
+    AddPaymentMethod<br>
+    </p>
+    <div class="parameters">
+        <h4>Parameters</h4>
+        
         </div>
-        <div class="response-bodies">
-            <h4>Responses</h4>
-            <div class="response">
+    <div class="response-bodies">
+        <h4>Responses</h4>
+        <div class="response">
             <h5>200</h5>
             <p><strong>Description:</strong> Payment Method Added</p>
             <p><strong>Schema:</strong> 
@@ -256,45 +249,43 @@ button {
                         </ul> </p>
             </div>
         </div>
-        </div>  
+    </div>  
       </section><section class="set"> 
-      
       <div class="path">/v1/merchant/metrics</div>
        <div class="post">
-        <h3>POST</h3>
-        <p>This endpoint listens for when a merchant uploads metrics.<br>
-        <button class="tag">Merchant</button><br>
-        AddMerchantMetrics<br>
-        </p>
-        <div class="parameters">
-            <h4>Parameters</h4>
-            
+    <h3>POST</h3>
+    <p>This endpoint listens for when a merchant uploads metrics.<br>
+    <button class="tag">Merchant</button><br>
+    AddMerchantMetrics<br>
+    </p>
+    <div class="parameters">
+        <h4>Parameters</h4>
+        
         </div>
-        <div class="response-bodies">
-            <h4>Responses</h4>
-            <div class="response">
+    <div class="response-bodies">
+        <h4>Responses</h4>
+        <div class="response">
             <h5>200</h5>
             <p><strong>Description:</strong> No Response expected.</p>
             <p><strong>Schema:</strong>  </p>
             </div>
         </div>
-        </div>  
+    </div>  
       </section><section class="set"> 
-      
       <div class="path">/v1/merchant/orders</div>
        <div class="post">
-        <h3>POST</h3>
-        <p>Make a request to this endpoint to create a Bolt order, generate a Bolt order token, and initiate the checkout process. A Bolt order token is required for Bolt orders; see Non-Bolt orders for alternative use cases.<br>
-        <button class="tag">Orders</button><br>
-        CreateOrderToken<br>
-        </p>
-        <div class="parameters">
-            <h4>Parameters</h4>
-            
+    <h3>POST</h3>
+    <p>Make a request to this endpoint to create a Bolt order, generate a Bolt order token, and initiate the checkout process. A Bolt order token is required for Bolt orders; see Non-Bolt orders for alternative use cases.<br>
+    <button class="tag">Orders</button><br>
+    CreateOrderToken<br>
+    </p>
+    <div class="parameters">
+        <h4>Parameters</h4>
+        
         </div>
-        <div class="response-bodies">
-            <h4>Responses</h4>
-            <div class="response">
+    <div class="response-bodies">
+        <h4>Responses</h4>
+        <div class="response">
             <h5>200</h5>
             <p><strong>Description:</strong> Token Generation Successful</p>
             <p><strong>Schema:</strong> 
@@ -328,23 +319,22 @@ button {
                         </ul> </p>
             </div>
         </div>
-        </div>  
+    </div>  
       </section><section class="set"> 
-      
       <div class="path">/v1/merchant/payment_methods</div>
        <div class="post">
-        <h3>POST</h3>
-        <p>This endpoint ...<br>
-        <button class="tag">Merchant</button><br>
-        CreatePaymentMethods<br>
-        </p>
-        <div class="parameters">
-            <h4>Parameters</h4>
-            
+    <h3>POST</h3>
+    <p>This endpoint ...<br>
+    <button class="tag">Merchant</button><br>
+    CreatePaymentMethods<br>
+    </p>
+    <div class="parameters">
+        <h4>Parameters</h4>
+        
         </div>
-        <div class="response-bodies">
-            <h4>Responses</h4>
-            <div class="response">
+    <div class="response-bodies">
+        <h4>Responses</h4>
+        <div class="response">
             <h5>200</h5>
             <p><strong>Description:</strong> Created Payment Method</p>
             <p><strong>Schema:</strong> 
@@ -354,23 +344,22 @@ button {
                         </ul> </p>
             </div>
         </div>
-        </div>  
+    </div>  
       </section><section class="set"> 
-      
       <div class="path">/v1/merchant/sign</div>
        <div class="post">
-        <h3>POST</h3>
-        <p>This endpoint...<br>
-        <button class="tag">Merchant</button><br>
-        SignMerchantUserID<br>
-        </p>
-        <div class="parameters">
-            <h4>Parameters</h4>
-            
+    <h3>POST</h3>
+    <p>This endpoint...<br>
+    <button class="tag">Merchant</button><br>
+    SignMerchantUserID<br>
+    </p>
+    <div class="parameters">
+        <h4>Parameters</h4>
+        
         </div>
-        <div class="response-bodies">
-            <h4>Responses</h4>
-            <div class="response">
+    <div class="response-bodies">
+        <h4>Responses</h4>
+        <div class="response">
             <h5>200</h5>
             <p><strong>Description:</strong> Merchant User ID Signed</p>
             <p><strong>Schema:</strong> 
@@ -380,19 +369,18 @@ button {
                         </ul> </p>
             </div>
         </div>
-        </div>  
+    </div>  
       </section><section class="set"> 
-      
       <div class="path">/v1/merchant/statement</div>
        <div class="post">
-        <h3>POST</h3>
-        <p>Get a pre-signed URL for the requested statement file.<br>
-        <button class="tag">Merchant</button><br>
-        statements<br>
-        </p>
-        <div class="parameters">
-            <h4>Parameters</h4>
-            <div class="parameter">
+    <h3>POST</h3>
+    <p>Get a pre-signed URL for the requested statement file.<br>
+    <button class="tag">Merchant</button><br>
+    statements<br>
+    </p>
+    <div class="parameters">
+        <h4>Parameters</h4>
+        <div class="parameter">
                     <h5>X-Nonce</h5>
                     <p><strong>Type:</strong> header</p>
                     <p><strong>Format:</strong> string</p>
@@ -403,9 +391,9 @@ capture payment twice or create order twice etc.
                     <p><strong>Required:</strong> true</p>
                     </div>
         </div>
-        <div class="response-bodies">
-            <h4>Responses</h4>
-            <div class="response">
+    <div class="response-bodies">
+        <h4>Responses</h4>
+        <div class="response">
             <h5>200</h5>
             <p><strong>Description:</strong> Statements Fetch Successful</p>
             <p><strong>Schema:</strong>  </p>
@@ -435,45 +423,43 @@ capture payment twice or create order twice etc.
                         </ul> </p>
             </div>
         </div>
-        </div>  
+    </div>  
       </section><section class="set"> 
-      
       <div class="path">/v1/merchant/track_shipment</div>
        <div class="post">
-        <h3>POST</h3>
-        <p>This endpoint creates an Easypost tracker to get shipment status updates.<br>
-        <button class="tag">Orders</button><br>
-        TrackShipment<br>
-        </p>
-        <div class="parameters">
-            <h4>Parameters</h4>
-            
+    <h3>POST</h3>
+    <p>This endpoint creates an Easypost tracker to get shipment status updates.<br>
+    <button class="tag">Orders</button><br>
+    TrackShipment<br>
+    </p>
+    <div class="parameters">
+        <h4>Parameters</h4>
+        
         </div>
-        <div class="response-bodies">
-            <h4>Responses</h4>
-            <div class="response">
+    <div class="response-bodies">
+        <h4>Responses</h4>
+        <div class="response">
             <h5>200</h5>
             <p><strong>Description:</strong> No JSON response should be expected.</p>
             <p><strong>Schema:</strong>  </p>
             </div>
         </div>
-        </div>  
+    </div>  
       </section><section class="set"> 
-      
       <div class="path">/v1/merchant/transactions/async_credit</div>
        <div class="post">
-        <h3>POST</h3>
-        <p>This endpoint ...<br>
-        <button class="tag">Transactions</button><br>
-        Async Credit<br>
-        </p>
-        <div class="parameters">
-            <h4>Parameters</h4>
-            
+    <h3>POST</h3>
+    <p>This endpoint ...<br>
+    <button class="tag">Transactions</button><br>
+    Async Credit<br>
+    </p>
+    <div class="parameters">
+        <h4>Parameters</h4>
+        
         </div>
-        <div class="response-bodies">
-            <h4>Responses</h4>
-            <div class="response">
+    <div class="response-bodies">
+        <h4>Responses</h4>
+        <div class="response">
             <h5>200</h5>
             <p><strong>Description:</strong> TBD</p>
             <p><strong>Schema:</strong> 
@@ -483,20 +469,19 @@ capture payment twice or create order twice etc.
                         </ul> </p>
             </div>
         </div>
-        </div>  
+    </div>  
       </section><section class="set"> 
-      
       <div class="path">/v1/merchant/transactions/capture</div>
        <div class="post">
-        <h3>POST</h3>
-        <p>This captures funds for the designated transaction. A capture can be done for any partial amount or for the total authorized amount. *Note that the actual JSON response will return all transaction details, but the fields documented below are the only fields relevant to this request.*
+    <h3>POST</h3>
+    <p>This captures funds for the designated transaction. A capture can be done for any partial amount or for the total authorized amount. *Note that the actual JSON response will return all transaction details, but the fields documented below are the only fields relevant to this request.*
 <br>
-        <button class="tag">Transactions</button><br>
-        CaptureTransaction<br>
-        </p>
-        <div class="parameters">
-            <h4>Parameters</h4>
-            <div class="parameter">
+    <button class="tag">Transactions</button><br>
+    CaptureTransaction<br>
+    </p>
+    <div class="parameters">
+        <h4>Parameters</h4>
+        <div class="parameter">
                     <h5>X-Nonce</h5>
                     <p><strong>Type:</strong> header</p>
                     <p><strong>Format:</strong> string</p>
@@ -507,9 +492,9 @@ capture payment twice or create order twice etc.
                     <p><strong>Required:</strong> true</p>
                     </div>
         </div>
-        <div class="response-bodies">
-            <h4>Responses</h4>
-            <div class="response">
+    <div class="response-bodies">
+        <h4>Responses</h4>
+        <div class="response">
             <h5>200</h5>
             <p><strong>Description:</strong> Capture Successful</p>
             <p><strong>Schema:</strong> 
@@ -543,20 +528,19 @@ capture payment twice or create order twice etc.
                         </ul> </p>
             </div>
         </div>
-        </div>  
+    </div>  
       </section><section class="set"> 
-      
       <div class="path">/v1/merchant/transactions/credit</div>
        <div class="post">
-        <h3>POST</h3>
-        <p>This refunds a captured transaction. Refunds can be done for any partial amount or for the total authorized amount. The `CreditCardRefund` response contains only the most relevant fields and is not a full response; see the `TransactionDetails` response for a full example.
+    <h3>POST</h3>
+    <p>This refunds a captured transaction. Refunds can be done for any partial amount or for the total authorized amount. The `CreditCardRefund` response contains only the most relevant fields and is not a full response; see the `TransactionDetails` response for a full example.
 <br>
-        <button class="tag">Transactions</button><br>
-        refund<br>
-        </p>
-        <div class="parameters">
-            <h4>Parameters</h4>
-            <div class="parameter">
+    <button class="tag">Transactions</button><br>
+    refund<br>
+    </p>
+    <div class="parameters">
+        <h4>Parameters</h4>
+        <div class="parameter">
                     <h5>X-Nonce</h5>
                     <p><strong>Type:</strong> header</p>
                     <p><strong>Format:</strong> string</p>
@@ -567,9 +551,9 @@ capture payment twice or create order twice etc.
                     <p><strong>Required:</strong> true</p>
                     </div>
         </div>
-        <div class="response-bodies">
-            <h4>Responses</h4>
-            <div class="response">
+    <div class="response-bodies">
+        <h4>Responses</h4>
+        <div class="response">
             <h5>200</h5>
             <p><strong>Description:</strong> Refund Successful</p>
             <p><strong>Schema:</strong>  </p>
@@ -599,20 +583,19 @@ capture payment twice or create order twice etc.
                         </ul> </p>
             </div>
         </div>
-        </div>  
+    </div>  
       </section><section class="set"> 
-      
       <div class="path">/v1/merchant/transactions/void</div>
        <div class="post">
-        <h3>POST</h3>
-        <p>This voids the authorization for a given transaction. Voids must be completed before the authorization is captured. Although the response returns all transaction details, only `id` and `status` are needed. 
+    <h3>POST</h3>
+    <p>This voids the authorization for a given transaction. Voids must be completed before the authorization is captured. Although the response returns all transaction details, only `id` and `status` are needed. 
 <br>
-        <button class="tag">Transactions</button><br>
-        void<br>
-        </p>
-        <div class="parameters">
-            <h4>Parameters</h4>
-            <div class="parameter">
+    <button class="tag">Transactions</button><br>
+    void<br>
+    </p>
+    <div class="parameters">
+        <h4>Parameters</h4>
+        <div class="parameter">
                     <h5>X-Nonce</h5>
                     <p><strong>Type:</strong> header</p>
                     <p><strong>Format:</strong> string</p>
@@ -623,9 +606,9 @@ capture payment twice or create order twice etc.
                     <p><strong>Required:</strong> true</p>
                     </div>
         </div>
-        <div class="response-bodies">
-            <h4>Responses</h4>
-            <div class="response">
+    <div class="response-bodies">
+        <h4>Responses</h4>
+        <div class="response">
             <h5>200</h5>
             <p><strong>Description:</strong> Void Successful</p>
             <p><strong>Schema:</strong>  </p>
@@ -647,19 +630,18 @@ capture payment twice or create order twice etc.
                         </ul> </p>
             </div>
         </div>
-        </div>  
+    </div>  
       </section><section class="set"> 
-      
       <div class="path">/v1/merchant/transactions/authorize</div>
        <div class="post">
-        <h3>POST</h3>
-        <p>This endpoint authorizes payments using both saved payment methods and unsaved payment methods. For guest-checkout flows and one-time payments, use the `MerchantCreditCardAuthorization` request example; for logged-in checkout flows using saved payment methods (either as a one-time purchase or as a reoccurring subscription), use the `MerchantCreditCardAuthorizationRecharge` request example.<br>
-        <button class="tag">Transactions</button><br>
-        MerchantAuthorize<br>
-        </p>
-        <div class="parameters">
-            <h4>Parameters</h4>
-            <div class="parameter">
+    <h3>POST</h3>
+    <p>This endpoint authorizes payments using both saved payment methods and unsaved payment methods. For guest-checkout flows and one-time payments, use the `MerchantCreditCardAuthorization` request example; for logged-in checkout flows using saved payment methods (either as a one-time purchase or as a reoccurring subscription), use the `MerchantCreditCardAuthorizationRecharge` request example.<br>
+    <button class="tag">Transactions</button><br>
+    MerchantAuthorize<br>
+    </p>
+    <div class="parameters">
+        <h4>Parameters</h4>
+        <div class="parameter">
                     <h5>X-Nonce</h5>
                     <p><strong>Type:</strong> header</p>
                     <p><strong>Format:</strong> string</p>
@@ -676,9 +658,9 @@ capture payment twice or create order twice etc.
                     <p><strong>Required:</strong> false</p>
                     </div>
         </div>
-        <div class="response-bodies">
-            <h4>Responses</h4>
-            <div class="response">
+    <div class="response-bodies">
+        <h4>Responses</h4>
+        <div class="response">
             <h5>200</h5>
             <p><strong>Description:</strong> Authorization Successful</p>
             <p><strong>Schema:</strong> 
@@ -688,19 +670,18 @@ capture payment twice or create order twice etc.
                         </ul> </p>
             </div>
         </div>
-        </div>  
+    </div>  
       </section><section class="set"> 
-      
       <div class="path">/v1/merchant/transactions/review</div>
        <div class="post">
-        <h3>POST</h3>
-        <p>TBD<br>
-        <button class="tag">Transactions</button><br>
-        ReviewTransaction<br>
-        </p>
-        <div class="parameters">
-            <h4>Parameters</h4>
-            <div class="parameter">
+    <h3>POST</h3>
+    <p>TBD<br>
+    <button class="tag">Transactions</button><br>
+    ReviewTransaction<br>
+    </p>
+    <div class="parameters">
+        <h4>Parameters</h4>
+        <div class="parameter">
                     <h5>X-Nonce</h5>
                     <p><strong>Type:</strong> header</p>
                     <p><strong>Format:</strong> string</p>
@@ -711,27 +692,26 @@ capture payment twice or create order twice etc.
                     <p><strong>Required:</strong> true</p>
                     </div>
         </div>
-        <div class="response-bodies">
-            <h4>Responses</h4>
-            <div class="response">
+    <div class="response-bodies">
+        <h4>Responses</h4>
+        <div class="response">
             <h5>200</h5>
             <p><strong>Description:</strong> Transaction Details Received</p>
             <p><strong>Schema:</strong>  </p>
             </div>
         </div>
-        </div>  
+    </div>  
       </section><section class="set"> 
-      
       <div class="path">/v1/merchant/transactions/{REFERENCE}</div>
       <div class="get">
-        <h3>GET</h3>
-        <p>TBD <br> 
-        <button class="tag">Transactions</button><br> 
-        GetTransactionDetails <br>
-        </p>
-        <div class="parameters">
-            <h4>Parameters</h4>
-            <div class="parameter">
+    <h3>GET</h3>
+    <p>TBD<br>
+    <button class="tag">Transactions</button><br>
+    GetTransactionDetails<br>
+    </p>
+    <div class="parameters">
+        <h4>Parameters</h4>
+        <div class="parameter">
                     <h5>REFERENCE</h5>
                     <p><strong>Type:</strong> path</p>
                     <p><strong>Format:</strong> string</p>
@@ -748,9 +728,9 @@ capture payment twice or create order twice etc.
                     <p><strong>Required:</strong> true</p>
                     </div>
         </div>
-        <div class="response-bodies">
-            <h4>Responses</h4>
-            <div class="response">
+    <div class="response-bodies">
+        <h4>Responses</h4>
+        <div class="response">
             <h5>200</h5>
             <p><strong>Description:</strong> Transaction Details Received</p>
             <p><strong>Schema:</strong>  </p>
@@ -772,23 +752,22 @@ capture payment twice or create order twice etc.
                         </ul> </p>
             </div>
         </div>
-        </div>   
+    </div>   
       </section><section class="set"> 
-      
       <div class="path">/v1/merchant/verify_signature</div>
        <div class="post">
-        <h3>POST</h3>
-        <p>This endpoint ...<br>
-        <button class="tag">Merchant</button><br>
-        VerifySignature<br>
-        </p>
-        <div class="parameters">
-            <h4>Parameters</h4>
-            
+    <h3>POST</h3>
+    <p>This endpoint ...<br>
+    <button class="tag">Merchant</button><br>
+    VerifySignature<br>
+    </p>
+    <div class="parameters">
+        <h4>Parameters</h4>
+        
         </div>
-        <div class="response-bodies">
-            <h4>Responses</h4>
-            <div class="response">
+    <div class="response-bodies">
+        <h4>Responses</h4>
+        <div class="response">
             <h5>200</h5>
             <p><strong>Description:</strong> Signature Verified</p>
             <p><strong>Schema:</strong> 
@@ -798,23 +777,22 @@ capture payment twice or create order twice etc.
                         </ul> </p>
             </div>
         </div>
-        </div>  
+    </div>  
       </section><section class="set"> 
-      
       <div class="path">/v1/merchant/identifiers</div>
       <div class="get">
-        <h3>GET</h3>
-        <p>This endpoint returns the merchant's public ID and the [publishable key](https://help.bolt.com/developers/guides/checkout-guides/managed-checkout/custom-cart-guides/how-to-integrate/) related to the merchant division. <br> 
-        <button class="tag">Merchant Identifiers</button><br> 
-        merchant-identifiers <br>
-        </p>
-        <div class="parameters">
-            <h4>Parameters</h4>
-            
+    <h3>GET</h3>
+    <p>This endpoint returns the merchant's public ID and the [publishable key](https://help.bolt.com/developers/guides/checkout-guides/managed-checkout/custom-cart-guides/how-to-integrate/) related to the merchant division.<br>
+    <button class="tag">Merchant Identifiers</button><br>
+    merchant-identifiers<br>
+    </p>
+    <div class="parameters">
+        <h4>Parameters</h4>
+        
         </div>
-        <div class="response-bodies">
-            <h4>Responses</h4>
-            <div class="response">
+    <div class="response-bodies">
+        <h4>Responses</h4>
+        <div class="response">
             <h5>200</h5>
             <p><strong>Description:</strong> Merchant Identifiers Retrieved</p>
             <p><strong>Schema:</strong> 
@@ -832,45 +810,43 @@ capture payment twice or create order twice etc.
                         </ul> </p>
             </div>
         </div>
-        </div>   
+    </div>   
       </section><section class="set"> 
-      
       <div class="path">/v1/merchant/orders/update</div>
        <div class="post">
-        <h3>POST</h3>
-        <p>This endpoint updates an order that has already been placed.<br>
-        <button class="tag">Orders</button><br>
-        MerchantOrderUpdate<br>
-        </p>
-        <div class="parameters">
-            <h4>Parameters</h4>
-            
+    <h3>POST</h3>
+    <p>This endpoint updates an order that has already been placed.<br>
+    <button class="tag">Orders</button><br>
+    MerchantOrderUpdate<br>
+    </p>
+    <div class="parameters">
+        <h4>Parameters</h4>
+        
         </div>
-        <div class="response-bodies">
-            <h4>Responses</h4>
-            <div class="response">
+    <div class="response-bodies">
+        <h4>Responses</h4>
+        <div class="response">
             <h5>200</h5>
             <p><strong>Description:</strong> No JSON response should be expected.</p>
             <p><strong>Schema:</strong>  </p>
             </div>
         </div>
-        </div>  
+    </div>  
       </section><section class="set"> 
-      
       <div class="path">/v1/non_bolt_order</div>
        <div class="post">
-        <h3>POST</h3>
-        <p>This endpoint creates an order that does not use a Bolt order token.<br>
-        <button class="tag">Orders</button><br>
-        CreateNonBoltOrder<br>
-        </p>
-        <div class="parameters">
-            <h4>Parameters</h4>
-            
+    <h3>POST</h3>
+    <p>This endpoint creates an order that does not use a Bolt order token.<br>
+    <button class="tag">Orders</button><br>
+    CreateNonBoltOrder<br>
+    </p>
+    <div class="parameters">
+        <h4>Parameters</h4>
+        
         </div>
-        <div class="response-bodies">
-            <h4>Responses</h4>
-            <div class="response">
+    <div class="response-bodies">
+        <h4>Responses</h4>
+        <div class="response">
             <h5>200</h5>
             <p><strong>Description:</strong> Non-Bolt Order Created</p>
             <p><strong>Schema:</strong> 
@@ -880,23 +856,22 @@ capture payment twice or create order twice etc.
                         </ul> </p>
             </div>
         </div>
-        </div>  
+    </div>  
       </section><section class="set"> 
-      
       <div class="path">/v1/products</div>
       <div class="get">
-        <h3>GET</h3>
-        <p>TBD <br> 
-        <button class="tag">Products</button><br> 
-        GetProducts <br>
-        </p>
-        <div class="parameters">
-            <h4>Parameters</h4>
-            
+    <h3>GET</h3>
+    <p>TBD<br>
+    <button class="tag">Products</button><br>
+    GetProducts<br>
+    </p>
+    <div class="parameters">
+        <h4>Parameters</h4>
+        
         </div>
-        <div class="response-bodies">
-            <h4>Responses</h4>
-            <div class="response">
+    <div class="response-bodies">
+        <h4>Responses</h4>
+        <div class="response">
             <h5>200</h5>
             <p><strong>Description:</strong> Products Fetched</p>
             <p><strong>Schema:</strong> 
@@ -906,23 +881,22 @@ capture payment twice or create order twice etc.
                         </ul> </p>
             </div>
         </div>
-        </div>   
+    </div>   
       </section><section class="set"> 
-      
       <div class="path">/v1/shipping_and_tax</div>
        <div class="post">
-        <h3>POST</h3>
-        <p>TBD<br>
-        <button class="tag">Orders</button><br>
-        ShippingAndTax<br>
-        </p>
-        <div class="parameters">
-            <h4>Parameters</h4>
-            
+    <h3>POST</h3>
+    <p>TBD<br>
+    <button class="tag">Orders</button><br>
+    ShippingAndTax<br>
+    </p>
+    <div class="parameters">
+        <h4>Parameters</h4>
+        
         </div>
-        <div class="response-bodies">
-            <h4>Responses</h4>
-            <div class="response">
+    <div class="response-bodies">
+        <h4>Responses</h4>
+        <div class="response">
             <h5>200</h5>
             <p><strong>Description:</strong> Shipping And Tax Successful</p>
             <p><strong>Schema:</strong> 
@@ -932,23 +906,22 @@ capture payment twice or create order twice etc.
                         </ul> </p>
             </div>
         </div>
-        </div>  
+    </div>  
       </section><section class="set"> 
-      
       <div class="path">/v1/statement</div>
       <div class="get">
-        <h3>GET</h3>
-        <p>TBD <br> 
-        <button class="tag">Merchant</button><br> 
-        GetStatementCSV <br>
-        </p>
-        <div class="parameters">
-            <h4>Parameters</h4>
-            
+    <h3>GET</h3>
+    <p>TBD<br>
+    <button class="tag">Merchant</button><br>
+    GetStatementCSV<br>
+    </p>
+    <div class="parameters">
+        <h4>Parameters</h4>
+        
         </div>
-        <div class="response-bodies">
-            <h4>Responses</h4>
-            <div class="response">
+    <div class="response-bodies">
+        <h4>Responses</h4>
+        <div class="response">
             <h5>200</h5>
             <p><strong>Description:</strong> Statement Fetched</p>
             <p><strong>Schema:</strong> 
@@ -958,20 +931,19 @@ capture payment twice or create order twice etc.
                         </ul> </p>
             </div>
         </div>
-        </div>   
+    </div>   
       </section><section class="set"> 
-      
       <div class="path">/v1/remote_checkout/order</div>
        <div class="post">
-        <h3>POST</h3>
-        <p>This is used for publisher implementation use cases. After the publisher has called Bolt to check product inventory for availability, an order can created through the `/remote_checkout/order` endpoint.
+    <h3>POST</h3>
+    <p>This is used for publisher implementation use cases. After the publisher has called Bolt to check product inventory for availability, an order can created through the `/remote_checkout/order` endpoint.
 <br>
-        <button class="tag">Orders</button><br>
-        CreateRemoteOrder<br>
-        </p>
-        <div class="parameters">
-            <h4>Parameters</h4>
-            <div class="parameter">
+    <button class="tag">Orders</button><br>
+    CreateRemoteOrder<br>
+    </p>
+    <div class="parameters">
+        <h4>Parameters</h4>
+        <div class="parameter">
                     <h5>X-Nonce</h5>
                     <p><strong>Type:</strong> header</p>
                     <p><strong>Format:</strong> string</p>
@@ -994,9 +966,9 @@ capture payment twice or create order twice etc.
                     <p><strong>Required:</strong> true</p>
                     </div>
         </div>
-        <div class="response-bodies">
-            <h4>Responses</h4>
-            <div class="response">
+    <div class="response-bodies">
+        <h4>Responses</h4>
+        <div class="response">
             <h5>200</h5>
             <p><strong>Description:</strong> Order Created Successfully</p>
             <p><strong>Schema:</strong> 
@@ -1014,19 +986,18 @@ capture payment twice or create order twice etc.
                         </ul> </p>
             </div>
         </div>
-        </div>  
+    </div>  
       </section><section class="set"> 
-      
       <div class="path">/v1/products/catalog</div>
       <div class="get">
-        <h3>GET</h3>
-        <p>tbd <br> 
-        <button class="tag">Products</button><br> 
-        GetProductsCatalog <br>
-        </p>
-        <div class="parameters">
-            <h4>Parameters</h4>
-            <div class="parameter">
+    <h3>GET</h3>
+    <p>tbd<br>
+    <button class="tag">Products</button><br>
+    GetProductsCatalog<br>
+    </p>
+    <div class="parameters">
+        <h4>Parameters</h4>
+        <div class="parameter">
                     <h5>X-Nonce</h5>
                     <p><strong>Type:</strong> header</p>
                     <p><strong>Format:</strong> string</p>
@@ -1049,9 +1020,9 @@ capture payment twice or create order twice etc.
                     <p><strong>Required:</strong> true</p>
                     </div>
         </div>
-        <div class="response-bodies">
-            <h4>Responses</h4>
-            <div class="response">
+    <div class="response-bodies">
+        <h4>Responses</h4>
+        <div class="response">
             <h5>200</h5>
             <p><strong>Description:</strong> Product Catalogue Retrieved</p>
             <p><strong>Schema:</strong> 
@@ -1061,19 +1032,18 @@ capture payment twice or create order twice etc.
                         </ul> </p>
             </div>
         </div>
-        </div>   
+    </div>   
       </section><section class="set"> 
-      
       <div class="path">/v1/shipments/mock_bolt_shipping</div>
        <div class="post">
-        <h3>POST</h3>
-        <p>This endpoint simulates tracking an order's shipment.<br>
-        <button class="tag">Orders</button><button class="tag">Testing</button><br>
-        TestShipping<br>
-        </p>
-        <div class="parameters">
-            <h4>Parameters</h4>
-            <div class="parameter">
+    <h3>POST</h3>
+    <p>This endpoint simulates tracking an order's shipment.<br>
+    <button class="tag">Orders</button><button class="tag">Testing</button><br>
+    TestShipping<br>
+    </p>
+    <div class="parameters">
+        <h4>Parameters</h4>
+        <div class="parameter">
                     <h5>X-Authorization-Signature</h5>
                     <p><strong>Type:</strong> header</p>
                     <p><strong>Format:</strong> string</p>
@@ -1081,9 +1051,9 @@ capture payment twice or create order twice etc.
                     <p><strong>Required:</strong> true</p>
                     </div>
         </div>
-        <div class="response-bodies">
-            <h4>Responses</h4>
-            <div class="response">
+    <div class="response-bodies">
+        <h4>Responses</h4>
+        <div class="response">
             <h5>200</h5>
             <p><strong>Description:</strong> Success - No Details</p>
             <p><strong>Schema:</strong>  </p>
@@ -1101,5 +1071,5 @@ capture payment twice or create order twice etc.
                         </ul> </p>
             </div>
         </div>
-        </div>  
+    </div>  
       </section>
