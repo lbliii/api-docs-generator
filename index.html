@@ -159,7 +159,7 @@ p {
             <p><strong>Schema:</strong> 
                         <h4>200</h4>
                         <ul class="response-properties">
-                        <li>profile: undefined</li><li>addresses: array</li><li>payment_methods: array</li><li>has_bolt_account: boolean</li>
+                        <li>profile: object</li><li>addresses: array</li><li>payment_methods: array</li><li>has_bolt_account: boolean</li>
                         </ul> </p>
             </div>
         </div>
@@ -181,7 +181,7 @@ p {
             <p><strong>Schema:</strong> 
                         <h4>200</h4>
                         <ul class="response-properties">
-                        <li>profile: undefined</li><li>addresses: array</li><li>payment_methods: array</li><li>has_bolt_account: boolean</li>
+                        <li>profile: object</li><li>addresses: array</li><li>payment_methods: array</li><li>has_bolt_account: boolean</li>
                         </ul> </p>
             </div>
         </div>
@@ -245,7 +245,7 @@ p {
             <p><strong>Schema:</strong> 
                         <h4>200</h4>
                         <ul class="response-properties">
-                        <li>id: string</li><li>type: string</li><li>last4: string</li><li>billing_address: undefined</li>
+                        <li>id: string</li><li>type: string</li><li>last4: string</li><li>billing_address: object</li>
                         </ul> </p>
             </div>
         </div>
@@ -291,7 +291,7 @@ p {
             <p><strong>Schema:</strong> 
                         <h4>200</h4>
                         <ul class="response-properties">
-                        <li>token: string</li><li>cart: undefined</li><li>external_data: undefined</li><li>user_note: string</li><li>dynamic_content: undefined</li>
+                        <li>token: string</li><li>cart: object</li><li>external_data: object</li><li>user_note: string</li><li>dynamic_content: object</li>
                         </ul> </p>
             </div><div class="response">
             <h5>400</h5>
@@ -340,7 +340,7 @@ p {
             <p><strong>Schema:</strong> 
                         <h4>200</h4>
                         <ul class="response-properties">
-                        <li>id: string</li><li>type: string</li><li>last4: string</li><li>billing_address: undefined</li>
+                        <li>id: string</li><li>type: string</li><li>last4: string</li><li>billing_address: object</li>
                         </ul> </p>
             </div>
         </div>
@@ -500,7 +500,7 @@ capture payment twice or create order twice etc.
             <p><strong>Schema:</strong> 
                         <h4>200</h4>
                         <ul class="response-properties">
-                        <li>id: string</li><li>type: undefined</li><li>processor: string</li><li>date: number</li><li>reference: string</li><li>status: undefined</li><li>from_consumer: undefined</li><li>to_consumer: undefined</li><li>from_credit_card: undefined</li><li>to_credit_card: undefined</li><li>amount: undefined</li><li>authorization: undefined</li><li>capture: undefined</li><li>captures: array</li><li>credit: undefined</li><li>merchant_division: undefined</li><li>merchant: undefined</li><li>properties: object</li><li>indemnification_decision: string</li><li>indemnification_reason: string</li><li>last_viewed_utc: number</li><li>view_status: string</li><li>last4: string</li><li>risk_insights: undefined</li><li>order_decision: undefined</li><li>merchant_order_number: string</li><li>splits: array</li><li>review_ticket: undefined</li>
+                        <li>id: string</li><li>type: string</li><li>processor: string</li><li>date: number</li><li>reference: string</li><li>status: string</li><li>from_consumer: undefined</li><li>to_consumer: undefined</li><li>from_credit_card: object</li><li>to_credit_card: object</li><li>amount: object</li><li>authorization: object</li><li>capture: object</li><li>captures: array</li><li>credit: object</li><li>merchant_division: object</li><li>merchant: object</li><li>properties: object</li><li>indemnification_decision: string</li><li>indemnification_reason: string</li><li>last_viewed_utc: number</li><li>view_status: string</li><li>last4: string</li><li>risk_insights: object</li><li>order_decision: object</li><li>merchant_order_number: string</li><li>splits: array</li><li>review_ticket: object</li>
                         </ul> </p>
             </div><div class="response">
             <h5>403</h5>
@@ -508,7 +508,7 @@ capture payment twice or create order twice etc.
             <p><strong>Schema:</strong> 
                         <h4>200</h4>
                         <ul class="response-properties">
-                        <li>id: string</li><li>type: undefined</li><li>processor: string</li><li>date: number</li><li>reference: string</li><li>status: undefined</li><li>from_consumer: undefined</li><li>to_consumer: undefined</li><li>from_credit_card: undefined</li><li>to_credit_card: undefined</li><li>amount: undefined</li><li>authorization: undefined</li><li>capture: undefined</li><li>captures: array</li><li>credit: undefined</li><li>merchant_division: undefined</li><li>merchant: undefined</li><li>properties: object</li><li>indemnification_decision: string</li><li>indemnification_reason: string</li><li>last_viewed_utc: number</li><li>view_status: string</li><li>last4: string</li><li>risk_insights: undefined</li><li>order_decision: undefined</li><li>merchant_order_number: string</li><li>splits: array</li><li>review_ticket: undefined</li>
+                        <li>id: string</li><li>type: string</li><li>processor: string</li><li>date: number</li><li>reference: string</li><li>status: string</li><li>from_consumer: undefined</li><li>to_consumer: undefined</li><li>from_credit_card: object</li><li>to_credit_card: object</li><li>amount: object</li><li>authorization: object</li><li>capture: object</li><li>captures: array</li><li>credit: object</li><li>merchant_division: object</li><li>merchant: object</li><li>properties: object</li><li>indemnification_decision: string</li><li>indemnification_reason: string</li><li>last_viewed_utc: number</li><li>view_status: string</li><li>last4: string</li><li>risk_insights: object</li><li>order_decision: object</li><li>merchant_order_number: string</li><li>splits: array</li><li>review_ticket: object</li>
                         </ul> </p>
             </div><div class="response">
             <h5>404</h5>
@@ -666,7 +666,7 @@ capture payment twice or create order twice etc.
             <p><strong>Schema:</strong> 
                         <h4>200</h4>
                         <ul class="response-properties">
-                        <li>transaction: undefined</li><li>external_outputs: undefined</li><li>is_verified_device_saved: boolean</li><li>redirect_url: string</li>
+                        <li>transaction: object</li><li>external_outputs: object</li><li>is_verified_device_saved: boolean</li><li>redirect_url: string</li>
                         </ul> </p>
             </div>
         </div>
@@ -798,7 +798,7 @@ capture payment twice or create order twice etc.
             <p><strong>Schema:</strong> 
                         <h4>200</h4>
                         <ul class="response-properties">
-                        <li>merchant_id: string</li><li>merchant_divisions: undefined</li>
+                        <li>merchant_id: string</li><li>merchant_divisions: array</li>
                         </ul> </p>
             </div><div class="response">
             <h5>403</h5>
@@ -806,7 +806,7 @@ capture payment twice or create order twice etc.
             <p><strong>Schema:</strong> 
                         <h4>200</h4>
                         <ul class="response-properties">
-                        <li>merchant_id: string</li><li>merchant_divisions: undefined</li>
+                        <li>merchant_id: string</li><li>merchant_divisions: array</li>
                         </ul> </p>
             </div>
         </div>
@@ -877,7 +877,7 @@ capture payment twice or create order twice etc.
             <p><strong>Schema:</strong> 
                         <h4>200</h4>
                         <ul class="response-properties">
-                        <li>Current: undefined</li><li>Parent: undefined</li><li>Properties: array</li><li>Variants: array</li><li>NextCursor: string</li>
+                        <li>Current: object</li><li>Parent: object</li><li>Properties: array</li><li>Variants: array</li><li>NextCursor: string</li>
                         </ul> </p>
             </div>
         </div>
@@ -902,7 +902,7 @@ capture payment twice or create order twice etc.
             <p><strong>Schema:</strong> 
                         <h4>200</h4>
                         <ul class="response-properties">
-                        <li>dynamic_content: undefined</li><li>in_store_pickup_options: array</li><li>shipping_options: array</li><li>ship_to_store_options: array</li><li>sub_total_tax: undefined</li>
+                        <li>dynamic_content: object</li><li>in_store_pickup_options: array</li><li>shipping_options: array</li><li>ship_to_store_options: array</li><li>sub_total_tax: object</li>
                         </ul> </p>
             </div>
         </div>

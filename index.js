@@ -184,7 +184,7 @@ const generatePathMethods = (path) => {
 
 const generateMethodDetails = (method, type) => {
     const parameters = generateMethodParameters(method)
-    const response_bodies = generateResponses(method)
+    const response_bodies = generateMethodResponses(method)
     const tags = generateMethodTags(method.tags)
     const method_html = `<div class="${type.toLowerCase()}">
     <h3>${type}</h3>
@@ -236,9 +236,9 @@ const generateMethodParameters = (method) => {
     return method_parameters.join('')
 }
 
-const generateResponses = (method) => {
-    let responses_content = ''
-    let schemas_content = ''
+const generateMethodResponses = (method) => {
+    let method_response = ''
+    let schema_content = ''
     if (method.responses){
         const response = method.responses 
         const response_keys = Object.keys(method.responses)
@@ -254,46 +254,58 @@ const generateResponses = (method) => {
                     if (schema_properties){
                         // get the properties of the schema
                         const schema_properties_keys = Object.keys(schema_properties)
-                        let schema_content = `
+                        let content = `
                         <h4>${key}</h4>
                         <ul class="response-properties">
                         ${schema_properties_keys.map(property => {
+                            if (schema_properties[property].$ref){
+                                const ref_name = schema_properties[property].$ref.split('/')[3]
+                                const ref_link = specJson.components.schemas[ref_name]
+                                const ref_properties = ref_link.properties
+           
+                                if (ref_properties){
+                                    for (let key in ref_properties){
+                                        schema_content += `<li>${key}: ${ref_properties[key].type}</li>`
+                                    }
+                                }
+                                return `<li>${property}: ${ref_link.type}</li>`
+                            }
                             return `<li>${property}: ${schema_properties[property].type}</li>`
                         }).join('')}
                         </ul>`
-                        schemas_content = schema_content
+                        schema_content = content
                         
                     }
         
                 } else if (schema.allOf)  {
-                    console.log(schema.allOf)
+                    // console.log(schema.allOf)
                 } else if (schema.oneOf) {
-                    console.log(schema.oneOf)
+                    // console.log(schema.oneOf)
                 } else if (schema.anyOf) {
-                    console.log('anyOf: ' + schema.anyOf)
+                    // console.log('anyOf: ' + schema.anyOf)
                 } else if (schema.items) {
     
-                    console.log('aaa: ' + schema.items)
+                    // console.log('aaa: ' + schema.items)
                 } else if (schema.type) {
-                    console.log('bbb: ' +  schema.type  )
+                    // console.log('bbb: ' +  schema.type  )
                 } else if (schema.properties) {
-                    console.log('ccc: ' + schema.properties)
+                    //console.log('ccc: ' + schema.properties)
                 }
 
             }  
     
-            responses_content += `<div class="response">
+            method_response += `<div class="response">
             <h5>${key}</h5>
             <p><strong>Description:</strong> ${response[key].description}</p>
-            <p><strong>Schema:</strong> ${schemas_content} </p>
+            <p><strong>Schema:</strong> ${schema_content} </p>
             </div>`
         })
     }
 
-    return responses_content
+    return method_response
 }
 
-// Create the index.html file for the documentation.
+// Create the index.html file for the documentation using the content pushed to htmlContent array.
 const updateHtmlFile = () => {
     fs.writeFileSync(path.join(__dirname, '/index.html'), htmlContent.join(''))
 }
