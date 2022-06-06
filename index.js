@@ -2,6 +2,7 @@ const fs = require('fs')
 const path = require('path') 
 const jsyaml = require('js-yaml')
 
+
 // Read the spec.yml file and convert it to spec.json 
 const spec = fs.readFileSync(path.join(__dirname, '/spec.yml'), 'utf8')
 const specJson = jsyaml.load(spec)
@@ -165,19 +166,13 @@ const generatePathMethods = (path) => {
     let post_html = ''
     let put_html = ''
     let delete_html = ''
+
     // Generate the html for each method and store it in the variables above.
-    if (get_raw){
-        get_html = generateMethodDetails(get_raw, 'GET')
-    }
-    if (post_raw){
-        post_html = generateMethodDetails(post_raw, 'POST')
-    }
-    if (put_raw){
-        put_html = generateMethodDetails(put_raw, 'PUT')
-    }
-    if (delete_raw){
-        delete_html = generateMethodDetails(delete_raw, 'DELETE')
-    }
+    if (get_raw) get_html = generateMethodDetails(get_raw, 'GET')
+    if (post_raw) post_html = generateMethodDetails(post_raw, 'POST')
+    if (put_raw) put_html = generateMethodDetails(put_raw, 'PUT')
+    if (delete_raw) delete_html = generateMethodDetails(delete_raw, 'DELETE')
+    
     let all_methods = `${get_html} ${post_html} ${put_html} ${delete_html}`
     return all_methods
 }
@@ -315,4 +310,3 @@ const updateHtmlFile = () => {
 generateAllPathDetails(paths)
 
 updateHtmlFile()
-

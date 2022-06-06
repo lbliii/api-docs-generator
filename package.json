@@ -4,7 +4,13 @@
   "description": "lb's api docs generator ",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "build": "node index.js build",
+    "dev": "node index.js dev",
+    "lint": "eslint --ext .js,.vue src/",
+    "precommit": "npm run lint",
+    "prepush": "npm run lint"
   },
   "keywords": [
     "api",
